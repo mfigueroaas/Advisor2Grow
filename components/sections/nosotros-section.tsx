@@ -1,30 +1,84 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Target, Eye, Shield, Users } from "lucide-react"
+import { Linkedin } from "lucide-react"
 
-const features = [
+const teamMembers = [
   {
-    icon: Target,
-    title: "Mision",
-    description: "Proveer soluciones tecnologicas innovadoras que impulsen el crecimiento y la eficiencia de nuestros clientes."
+    name: "Nombre Apellido",
+    role: "Arquitecto Cloud",
+    description: "Mas de 15 anos de experiencia en arquitecturas cloud empresariales. Especialista en AWS, Azure y soluciones hibridas.",
+    linkedin: "#"
   },
   {
-    icon: Eye,
-    title: "Vision",
-    description: "Ser lideres en consultoria TI, reconocidos por nuestra excelencia tecnica y compromiso con el exito del cliente."
+    name: "Nombre Apellido",
+    role: "Director de Operaciones",
+    description: "Experto en gestion de infraestructura critica y operaciones TI. Certificado en ITIL y PMP.",
+    linkedin: "#"
   },
   {
-    icon: Shield,
-    title: "Valores",
-    description: "Integridad, innovacion, compromiso y excelencia en cada proyecto que emprendemos."
+    name: "Nombre Apellido",
+    role: "Especialista en Seguridad",
+    description: "Lider en ciberseguridad con certificaciones CISSP y CEH. Protegiendo empresas por mas de 10 anos.",
+    linkedin: "#"
   },
   {
-    icon: Users,
-    title: "Equipo",
-    description: "Profesionales certificados con amplia experiencia en las principales tecnologias del mercado."
+    name: "Nombre Apellido",
+    role: "Consultor Senior DevOps",
+    description: "Automatizacion y CI/CD son su pasion. Implementando pipelines eficientes en multiples industrias.",
+    linkedin: "#"
   }
 ]
+
+function TeamCard({ member, index }: { member: typeof teamMembers[0]; index: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="group relative bg-slate-800/40 border border-slate-700/50 overflow-hidden transition-all duration-300 hover:border-[#F26522]"
+    >
+      {/* Card Content */}
+      <div className="p-6">
+        {/* Photo Placeholder */}
+        <div className="relative mb-6 overflow-hidden">
+          <div className="aspect-square bg-slate-700 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+            <span className="text-gray-400 text-sm text-center px-4">
+              [ESPACIO PARA FOTO DE PERFIL]
+            </span>
+          </div>
+        </div>
+
+        {/* Name and Role */}
+        <div className="text-center">
+          <h3 className="text-xl font-semibold text-white mb-1">
+            {member.name}
+          </h3>
+          <p className="text-[#F26522] text-sm font-medium">
+            {member.role}
+          </p>
+        </div>
+      </div>
+
+      {/* Overlay Panel - Slides up on hover */}
+      <div className="absolute inset-0 bg-[#1a2332]/95 flex flex-col items-center justify-center p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
+        <p className="text-gray-300 text-sm text-center leading-relaxed mb-6">
+          {member.description}
+        </p>
+        <a
+          href={member.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 text-[#F26522] hover:text-white transition-colors cursor-hover"
+        >
+          <Linkedin className="h-5 w-5" />
+          <span className="text-sm font-medium">LinkedIn</span>
+        </a>
+      </div>
+    </motion.div>
+  )
+}
 
 export function NosotrosSection() {
   return (
@@ -42,74 +96,19 @@ export function NosotrosSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-            Sobre <span className="text-[#F26522]">Nosotros</span>
+            Conoce a Nuestro <span className="text-[#F26522]">Equipo</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Con mas de 20 anos de experiencia, somos tu aliado estrategico en la transformacion digital de tu empresa.
+            Profesionales certificados con amplia experiencia en las principales tecnologias del mercado.
           </p>
         </motion.div>
 
-        {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group p-6 bg-[#243246] border border-[#2d3d52] hover:border-[#F26522]/50 transition-all duration-300"
-            >
-              <div className="mb-4">
-                <feature.icon className="h-10 w-10 text-[#F26522]" strokeWidth={1.5} />
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-[#F26522] transition-colors">
-                {feature.title}
-              </h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                {feature.description}
-              </p>
-            </motion.div>
+        {/* Team Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {teamMembers.map((member, index) => (
+            <TeamCard key={index} member={member} index={index} />
           ))}
         </div>
-
-        {/* About Text */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-16 grid md:grid-cols-2 gap-8 items-center"
-        >
-          <div>
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Por que elegirnos?
-            </h3>
-            <p className="text-gray-400 leading-relaxed mb-4">
-              En Advisor2Grow, combinamos experiencia tecnica con una profunda comprension de las necesidades empresariales. Nuestro enfoque centrado en el cliente nos permite disenar soluciones a medida que generan valor real.
-            </p>
-            <p className="text-gray-400 leading-relaxed">
-              Trabajamos con las principales tecnologias cloud y on-premise, garantizando que tu infraestructura este preparada para los desafios del presente y del futuro.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              { number: "99.9%", label: "Uptime Garantizado" },
-              { number: "500+", label: "Incidentes Resueltos" },
-              { number: "15+", label: "Certificaciones" },
-              { number: "3", label: "Paises" }
-            ].map((stat, index) => (
-              <div 
-                key={index}
-                className="p-4 bg-[#1a2332] border border-[#2d3d52] text-center"
-              >
-                <div className="text-2xl font-bold text-[#F26522] mb-1">{stat.number}</div>
-                <div className="text-xs text-gray-400">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   )
