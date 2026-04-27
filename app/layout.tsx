@@ -1,14 +1,26 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Space_Grotesk, Inter, Roboto_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const spaceGrotesk = Space_Grotesk({ 
+  subsets: ["latin"],
+  variable: '--font-space-grotesk'
+})
+
+const inter = Inter({ 
+  subsets: ["latin"],
+  variable: '--font-inter'
+})
+
+const robotoMono = Roboto_Mono({ 
+  subsets: ["latin"],
+  variable: '--font-roboto-mono'
+})
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'Advisor2Grow | Transformamos tus servicios TI',
+  description: 'Consultora TI especializada en infraestructura segura, estable y escalable. 20+ años de experiencia en soluciones MultiCloud.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -35,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="es" className={`${spaceGrotesk.variable} ${inter.variable} ${robotoMono.variable} bg-background`}>
       <body className="font-sans antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
