@@ -2,11 +2,11 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Mail, MapPin, Phone } from "lucide-react"
 
 export function InicioSection() {
-  const handleScrollToContact = () => {
-    const element = document.querySelector("#contacto")
+  const handleScrollTo = (id: string) => {
+    const element = document.querySelector(id)
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
     }
@@ -15,7 +15,7 @@ export function InicioSection() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#1a2332]"
+      className="relative min-h-screen flex items-center overflow-hidden bg-[#1a2332]"
     >
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 opacity-20">
@@ -34,66 +34,97 @@ export function InicioSection() {
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#1a2332] via-transparent to-[#1a2332]" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Transformamos tu
-            <br />
-            <span className="text-[#F26522]">Infraestructura TI</span>
-          </h1>
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
-          <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Consultora especializada en soluciones tecnologicas empresariales. 
-            Construimos infraestructuras seguras, estables y escalables.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              onClick={handleScrollToContact}
-              className="bg-[#F26522] hover:bg-[#F26522]/90 text-white font-semibold px-8 py-6 text-lg transition-all duration-300 hover:shadow-[0_0_25px_rgba(242,101,34,0.5)]"
-            >
-              Comenzar Ahora
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+          {/* Columna Izquierda - Texto */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col"
+          >
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-white mb-8 leading-tight">
+              Transformamos tus servicios TI en una plataforma{" "}
+              <span className="text-[#F26522]">segura, estable y lista para crecer</span>
+            </h1>
             
-            <Button
-              variant="outline"
-              onClick={() => {
-                const element = document.querySelector("#servicios")
-                if (element) element.scrollIntoView({ behavior: "smooth" })
-              }}
-              className="border-gray-600 text-gray-300 hover:border-[#F26522] hover:text-[#F26522] px-8 py-6 text-lg transition-all duration-300"
-            >
-              Ver Servicios
-            </Button>
-          </div>
-        </motion.div>
-
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
-        >
-          {[
-            { value: "20+", label: "Anos de Experiencia" },
-            { value: "100+", label: "Proyectos Exitosos" },
-            { value: "50+", label: "Clientes Satisfechos" },
-            { value: "24/7", label: "Soporte Continuo" },
-          ].map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-[#F26522] mb-2">
-                {stat.value}
+            {/* Informacion de Contacto */}
+            <div className="space-y-4 mb-10">
+              <div className="flex items-center gap-4">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#F26522]/10 border border-[#F26522]/20">
+                  <Mail className="w-5 h-5 text-[#F26522]" />
+                </div>
+                <div>
+                  <p className="text-gray-400 text-sm">Correo</p>
+                  <p className="text-white font-medium">contacto@advisor2grow.com</p>
+                </div>
               </div>
-              <div className="text-sm text-gray-400">{stat.label}</div>
+              
+              <div className="flex items-center gap-4">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#F26522]/10 border border-[#F26522]/20">
+                  <MapPin className="w-5 h-5 text-[#F26522]" />
+                </div>
+                <div>
+                  <p className="text-gray-400 text-sm">Sede Central</p>
+                  <p className="text-white font-medium">Ciudad de Mexico, Mexico</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-4">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#F26522]/10 border border-[#F26522]/20">
+                  <Phone className="w-5 h-5 text-[#F26522]" />
+                </div>
+                <div>
+                  <p className="text-gray-400 text-sm">Telefono</p>
+                  <p className="text-white font-medium">+52 55 1234 5678</p>
+                </div>
+              </div>
             </div>
-          ))}
-        </motion.div>
+
+            {/* Botones CTA */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                onClick={() => handleScrollTo("#contacto")}
+                className="bg-[#F26522] hover:bg-[#F26522]/90 text-white font-semibold px-8 py-6 text-lg transition-all duration-300 hover:shadow-[0_0_25px_rgba(242,101,34,0.5)]"
+              >
+                Contactar
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              
+              <Button
+                variant="outline"
+                onClick={() => handleScrollTo("#servicios")}
+                className="border-gray-600 text-gray-300 hover:border-[#F26522] hover:text-[#F26522] px-8 py-6 text-lg transition-all duration-300"
+              >
+                Servicios
+              </Button>
+            </div>
+          </motion.div>
+
+          {/* Columna Derecha - Visual Placeholder */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex items-center justify-center"
+          >
+            <div className="w-full aspect-square max-w-lg border border-slate-700/50 bg-slate-800/50 rounded-lg flex items-center justify-center p-8">
+              <div className="text-center">
+                <div className="w-20 h-20 mx-auto mb-6 border-2 border-dashed border-slate-600 rounded-lg flex items-center justify-center">
+                  <div className="w-8 h-8 border-2 border-slate-500 rounded" />
+                </div>
+                <p className="text-slate-400 text-lg font-medium leading-relaxed">
+                  [ESPACIO PARA IMAGEN PRINCIPAL O ANIMACION 3D]
+                </p>
+                <p className="text-slate-500 text-sm mt-2">
+                  Dimensiones recomendadas: 600x600px
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+        </div>
       </div>
 
       {/* Scroll Indicator */}
