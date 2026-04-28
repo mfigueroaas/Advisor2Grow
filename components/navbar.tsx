@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react"
 import { motion } from "framer-motion"
+import Image from "next/image"
 import { Menu, X } from "lucide-react"
 
 const navLinks = [
@@ -93,11 +94,13 @@ export function Navbar() {
             onClick={scrollToTop}
             className="flex-shrink-0 cursor-pointer"
           >
-            <div 
-              className="flex h-[50px] w-[150px] items-center justify-center border-2 border-dashed border-gray-500 text-gray-400 text-xs text-center px-2"
-            >
-              [INSERTAR LOGO AQUI]
-            </div>
+            <Image
+              src="/Imagenes/hero-principal.png"
+              alt="Logo Advisor2Grow"
+              width={66}
+              height={40}
+              className="w-auto h-10 brightness-110 drop-shadow-[0_2px_8px_rgba(242,101,34,0.2)]"
+            />
           </button>
 
           {/* Desktop Navigation */}

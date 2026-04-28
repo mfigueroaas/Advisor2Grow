@@ -1,44 +1,31 @@
-import type { Metadata } from 'next'
-import { Space_Grotesk, Inter, Roboto_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
-import './globals.css'
+import type { Metadata } from "next"
+import { Space_Grotesk, Inter, Roboto_Mono } from "next/font/google"
+import "../styles/globals.css"
+import { CustomCursor } from "@/components/custom-cursor"
+import { NavbarExecutive } from "@/components/navbar-executive"
+import { FooterExecutive } from "@/components/footer-executive"
 
-const spaceGrotesk = Space_Grotesk({ 
+// Títulos (pesada, geométrica)
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: '--font-space-grotesk'
+  variable: "--font-space",
 })
 
-const inter = Inter({ 
+// Párrafos
+const inter = Inter({
   subsets: ["latin"],
-  variable: '--font-inter'
+  variable: "--font-inter",
 })
 
-const robotoMono = Roboto_Mono({ 
+// Detalles, HUD
+const robotoMono = Roboto_Mono({
   subsets: ["latin"],
-  variable: '--font-roboto-mono'
+  variable: "--font-mono",
 })
 
 export const metadata: Metadata = {
-  title: 'Advisor2Grow | Transformamos tus servicios TI',
-  description: 'Consultora TI especializada en infraestructura segura, estable y escalable. 20+ años de experiencia en soluciones MultiCloud.',
-  generator: 'v0.app',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
+  title: "Advisor2Grow | Consultoría TI Corporativa",
+  description: "Transformamos tus servicios TI en una plataforma segura, estable y lista para crecer.",
 }
 
 export default function RootLayout({
@@ -47,10 +34,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className={`${spaceGrotesk.variable} ${inter.variable} ${robotoMono.variable} bg-background`}>
-      <body className="font-sans antialiased">
-        {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+    <html lang="es" className="scroll-smooth">
+      <body
+        className={`${spaceGrotesk.variable} ${inter.variable} ${robotoMono.variable} font-sans bg-slate-950 text-slate-200 antialiased min-h-screen flex flex-col`}
+      >
+        <CustomCursor />
+        <NavbarExecutive />
+        <div className="flex-1 flex flex-col">{children}</div>
+        <FooterExecutive />
       </body>
     </html>
   )

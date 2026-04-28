@@ -6,91 +6,67 @@ import { motion } from "framer-motion"
 export function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isHovering, setIsHovering] = useState(false)
-  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY })
-      setIsVisible(true)
     }
 
-    const handleMouseEnter = () => setIsVisible(true)
-    const handleMouseLeave = () => setIsVisible(false)
+    const handleMouseOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      // Consider links and buttons as interactive elements
+      if (
+        target.tagName.toLowerCase() === "a" ||
+        target.tagName.toLowerCase() === "button" ||
+        target.closest("a") ||
+        target.closest("button") ||
+        target.getAttribute("role") === "button"
+      ) {
+        setIsHovering(true)
+      } else {
+        setIsHovering(false)
+      }
+    }
 
     window.addEventListener("mousemove", updateMousePosition)
-    document.addEventListener("mouseenter", handleMouseEnter)
-    document.addEventListener("mouseleave", handleMouseLeave)
-
-    // Add hover detection for interactive elements
-    const addHoverListeners = () => {
-      const interactiveElements = document.querySelectorAll(
-        'a, button, [role="button"], input, textarea, select, [data-cursor-hover]'
-      )
-      
-      interactiveElements.forEach((el) => {
-        el.addEventListener("mouseenter", () => setIsHovering(true))
-        el.addEventListener("mouseleave", () => setIsHovering(false))
-      })
-    }
-
-    // Initial setup and observe for new elements
-    addHoverListeners()
-    
-    const observer = new MutationObserver(() => {
-      addHoverListeners()
-    })
-    
-    observer.observe(document.body, { childList: true, subtree: true })
+    window.addEventListener("mouseover", handleMouseOver)
 
     return () => {
       window.removeEventListener("mousemove", updateMousePosition)
-      document.removeEventListener("mouseenter", handleMouseEnter)
-      document.removeEventListener("mouseleave", handleMouseLeave)
-      observer.disconnect()
+      window.removeEventListener("mouseover", handleMouseOver)
     }
   }, [])
 
-  if (!isVisible) return null
-
   return (
     <>
-      {/* Inner dot - Orange solid */}
+      {/* Outer Ring */}
       <motion.div
-        className="pointer-events-none fixed top-0 left-0 z-[9999] rounded-full bg-[#F26522]"
-        style={{
-          width: 8,
-          height: 8,
+        className="fixed top-0 left-0 w-8 h-8 rounded-full border border-orange-500/50 pointer-events-none z-[9999]"
+        animate={{
+          x: mousePosition.x - 16,
+          y: mousePosition.y - 16,
+          scale: isHovering ? 1.5 : 1,
+          backgroundColor: isHovering ? "rgba(242, 101, 34, 0.1)" : "transparent",
         }}
+        transition={{
+          type: "spring",
+          stiffness: 150,
+          damping: 15,
+          mass: 0.1,
+        }}
+      />
+      {/* Inner Dot */}
+      <motion.div
+        className="fixed top-0 left-0 w-2 h-2 bg-orange-500 rounded-full pointer-events-none z-[9999]"
         animate={{
           x: mousePosition.x - 4,
           y: mousePosition.y - 4,
-          scale: isHovering ? 1.5 : 1,
         }}
         transition={{
           type: "spring",
           stiffness: 500,
           damping: 28,
-          mass: 0.5,
-        }}
-      />
-      
-      {/* Outer ring - Orange translucent border */}
-      <motion.div
-        className="pointer-events-none fixed top-0 left-0 z-[9998] rounded-full border-2 border-[#F26522]/50"
-        style={{
-          width: 32,
-          height: 32,
-        }}
-        animate={{
-          x: mousePosition.x - 16,
-          y: mousePosition.y - 16,
-          scale: isHovering ? 1.5 : 1,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 250,
-          damping: 20,
-          mass: 0.8,
+          mass: 0.1,
         }}
       />
     </>

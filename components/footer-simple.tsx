@@ -1,3 +1,5 @@
+"use client"
+
 export function FooterSimple() {
   return (
     <footer className="py-8 bg-[#1a2332] border-t border-[#2d3d52]">
