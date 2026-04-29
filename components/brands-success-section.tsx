@@ -64,7 +64,7 @@ export function BrandsSuccessSection() {
         </motion.h2>
       </div>
 
-      {/* Zona Superior: Grid de Logos */}
+      {/* Zona Superior: Grid de Logos Holográficos (SIN EFECTO BLANCO) */}
       <div className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4 lg:gap-8 mb-8 md:mb-12">
         {brandsData.map((brand) => {
           const isActive = activeBrand.id === brand.id
@@ -74,27 +74,34 @@ export function BrandsSuccessSection() {
               key={brand.id}
               onClick={() => setActiveBrand(brand)}
               onMouseEnter={() => setActiveBrand(brand)}
-              className={`relative h-24 md:h-32 flex flex-col items-center justify-center bg-slate-900/40 backdrop-blur-md border transition-all duration-300 group cursor-crosshair rounded-none
+              className={`relative h-32 md:h-48 flex flex-col items-center justify-center transition-all duration-500 group cursor-crosshair rounded-none overflow-hidden backdrop-blur-md
                 ${isActive 
-                  ? 'border-slate-700 border-b-2 border-b-orange-500 bg-slate-900/80 shadow-[0_10px_20px_-10px_rgba(242,101,34,0.3)]' 
-                  : 'border-slate-800/50 hover:bg-slate-900/60 hover:border-slate-700 hover:border-b-2 hover:border-b-orange-500/50'
+                  ? 'bg-orange-500/10 border border-orange-500/50 shadow-[inset_0_0_30px_rgba(242,101,34,0.1),0_0_20px_rgba(242,101,34,0.15)]' 
+                  : 'bg-orange-500/[0.03] border border-orange-500/20 hover:bg-orange-500/[0.08] hover:border-orange-500/40 hover:shadow-[inset_0_0_20px_rgba(242,101,34,0.05)]'
                 }
               `}
             >
-              <div className="relative w-12 h-12 md:w-16 md:h-16 mb-2 md:mb-3">
+              {/* Contenedor de la Imagen */}
+              <div className="relative w-20 h-20 md:w-28 md:h-28 mb-2 md:mb-3 flex items-center justify-center">
                 <Image 
                   src={brand.image} 
                   alt={brand.name} 
                   fill 
-                  className={`object-contain transition-all duration-300 ${
-                    isActive ? 'grayscale-0 opacity-100 scale-110' : 'grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105'
+                  className={`object-contain transition-all duration-500 ${
+                    isActive 
+                      ? 'drop-shadow-[0_0_20px_rgba(255,255,255,0.7)] scale-110' 
+                      : 'drop-shadow-[0_0_12px_rgba(255,255,255,0.3)] opacity-90 group-hover:opacity-100 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] group-hover:scale-105'
                   }`} 
                 />
               </div>
+              
+              {/* Texto de la Marca */}
               <span className={`font-mono text-[8px] md:text-[10px] tracking-widest uppercase transition-colors duration-300 ${
-                isActive ? 'text-slate-200' : 'text-slate-600 group-hover:text-slate-400'
+                isActive 
+                  ? 'text-orange-400 font-bold drop-shadow-[0_0_5px_rgba(242,101,34,0.8)]' 
+                  : 'text-orange-500/50 group-hover:text-orange-400/80'
               }`}>
-                {brand.name.split(' ')[0]} {/* Muestra nombre corto para el botón */}
+                {brand.name.split(' ')[0]}
               </span>
             </button>
           )
@@ -103,12 +110,10 @@ export function BrandsSuccessSection() {
 
       {/* Zona Inferior: Terminal de Casos de Éxito */}
       <div className="relative w-full border border-slate-800 bg-black/40 backdrop-blur-md p-6 md:p-8 lg:p-12 min-h-[300px] md:min-h-[250px] flex flex-col overflow-hidden rounded-none">
-        {/* Decoraciones HUD de la terminal */}
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500/0 via-orange-500/20 to-orange-500/0"></div>
         <div className="absolute top-0 left-0 w-3 h-3 md:w-4 md:h-4 border-t border-l border-slate-500"></div>
         <div className="absolute bottom-0 right-0 w-3 h-3 md:w-4 md:h-4 border-b border-r border-slate-500"></div>
 
-        {/* Título de la terminal */}
         <div className="flex items-center gap-2 mb-4 md:mb-6 border-b border-slate-800/50 pb-3 md:pb-4">
           <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-orange-500 animate-pulse"></div>
           <span className="font-mono text-[10px] md:text-xs text-slate-500 uppercase tracking-widest">
@@ -116,7 +121,6 @@ export function BrandsSuccessSection() {
           </span>
         </div>
 
-        {/* Contenido Animado */}
         <div className="flex-1 relative">
           <AnimatePresence mode="wait">
             <motion.div
@@ -143,7 +147,6 @@ export function BrandsSuccessSection() {
                 </p>
               </div>
 
-              {/* Status final */}
               <div className="mt-6 md:mt-8 font-mono text-[8px] md:text-[10px] text-slate-600 uppercase">
                 <span className="text-orange-500/70">DATOS_VERIFICADOS</span> // FIN_DE_REGISTRO
               </div>
@@ -151,7 +154,6 @@ export function BrandsSuccessSection() {
           </AnimatePresence>
         </div>
       </div>
-
     </section>
   )
 }
