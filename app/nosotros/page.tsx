@@ -103,10 +103,10 @@ export default function NosotrosPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {[
-            { name: "Juan Pérez", role: "Arquitecto Cloud", exp: "Especialista en migraciones AWS y Azure.", image: "/Imagenes/Personas/especialista-1.jpg" },
-            { name: "María Gómez", role: "Directora Ciberseguridad", exp: "Auditora normativa ISO 27001.", image: "/Imagenes/Personas/especialista-2.jpg" },
-            { name: "Carlos Ruiz", role: "Ingeniero DevOps", exp: "Automatización y despliegue continuo.", image: "/Imagenes/Personas/especialista-3.jpg" },
-            { name: "Ana Silva", role: "Líder Infraestructura", exp: "Alta disponibilidad y VMware.", image: "/Imagenes/Personas/especialista-4.jpg" }
+            { name: "Marcelo Collao", role: "Arquitecto Cloud", exp: "Especialista en migraciones AWS y Azure.", image: "/Imagenes/Personas/especialista-1.jpg" },
+            { name: "Victor Gálvez", role: "Directora Ciberseguridad", exp: "Auditora normativa ISO 27001.", image: "/Imagenes/Personas/especialista-2.jpg" },
+            { name: "Marcelo Figueroa", role: "Ingeniero DevOps", exp: "Automatización y despliegue continuo.", image: "/Imagenes/Personas/especialista-3.jpg" },
+            { name: "Dante Mendoza", role: "Líder Infraestructura", exp: "Alta disponibilidad y VMware.", image: "/Imagenes/Personas/especialista-4.jpg" }
           ].map((member, i) => (
             <motion.div 
               key={i}

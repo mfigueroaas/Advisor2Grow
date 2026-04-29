@@ -1,5 +1,5 @@
 "use client"
-
+import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu } from "lucide-react"
@@ -35,6 +35,7 @@ export function NavbarExecutive() {
             height={40}
             className="w-auto h-10 brightness-110 drop-shadow-[0_2px_8px_rgba(242,101,34,0.2)]"
           />
+          <span className="text-xl font-bold text-white tracking-wide">Advisor<span className="text-orange-500">2</span>Grow</span>
         </Link>
 
         {/* Mobile Menu */}
