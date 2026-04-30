@@ -6,13 +6,7 @@ const config = {
     './src/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
-    extend: {
-      colors: {
-        brand: {
-          primary: '#F26522',
-        },
-      },
-    },
+    extend: {},
   },
   plugins: [],
 }

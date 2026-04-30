@@ -16,7 +16,7 @@ export function BrandsSuccessSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-slate-900 uppercase"
+          className="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-foreground uppercase"
         >
           Marcas con las que trabajamos
         </motion.h2>
@@ -35,8 +35,8 @@ export function BrandsSuccessSection() {
       </div>
 
       {/* Zona Inferior: Casos de Éxito */}
-      <div className="relative w-full bg-white border border-slate-200 shadow-sm p-6 md:p-8 lg:p-12 min-h-[300px] md:min-h-[250px] flex flex-col overflow-hidden rounded-xl">
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-primary/0 via-brand-primary/20 to-brand-primary/0"></div>
+      <div className="relative w-full bg-surface border border-border shadow-sm p-6 md:p-8 lg:p-12 min-h-[300px] md:min-h-[250px] flex flex-col overflow-hidden rounded-xl">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand/0 via-brand/20 to-brand/0"></div>
 
         <div className="flex-1 relative">
           <AnimatePresence mode="wait">
@@ -49,17 +49,17 @@ export function BrandsSuccessSection() {
               className="flex flex-col h-full"
             >
               <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-3 md:mb-4">
-                <span className="font-sans text-brand-primary text-xs md:text-sm font-semibold uppercase tracking-wider">
+                <span className="font-sans text-brand text-xs md:text-sm font-semibold uppercase tracking-wider">
                   Socio objetivo:
                 </span>
-                <h3 className="text-xl md:text-2xl lg:text-3xl font-sans font-bold text-slate-900">
+                <h3 className="text-xl md:text-2xl lg:text-3xl font-sans font-bold text-foreground">
                   {activeBrand.name}
                 </h3>
               </div>
               
-              <div className="relative pl-4 md:pl-6 border-l border-slate-200 mt-2">
-                <div className="absolute left-[-1px] top-0 w-[2px] h-6 md:h-8 bg-brand-primary"></div>
-                <p className="font-sans text-slate-600 text-sm md:text-lg leading-relaxed">
+              <div className="relative pl-4 md:pl-6 border-l border-border mt-2">
+                <div className="absolute left-[-1px] top-0 w-[2px] h-6 md:h-8 bg-brand"></div>
+                <p className="font-sans text-muted-foreground text-sm md:text-lg leading-relaxed">
                   {activeBrand.successCase}
                 </p>
               </div>

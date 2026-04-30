@@ -17,7 +17,7 @@ export function ContactoSection() {
 
   return (
     <section
-      id="contacto"
+              <span className="text-brand">Contacto</span>
       className="relative py-24 bg-slate-50"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -40,7 +40,7 @@ export function ContactoSection() {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+                       className="bg-surface border-border text-foreground placeholder:text-faint-foreground focus:border-brand focus:ring-brand"
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
@@ -48,7 +48,7 @@ export function ContactoSection() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <FieldGroup>
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <Field>
+                       className="bg-surface border-border text-foreground placeholder:text-faint-foreground focus:border-brand focus:ring-brand"
                     <FieldLabel className="text-slate-600">Nombre</FieldLabel>
                     <Input 
                       type="text"
@@ -58,7 +58,7 @@ export function ContactoSection() {
                   </Field>
                   <Field>
                     <FieldLabel className="text-slate-600">Email</FieldLabel>
-                    <Input 
+                     className="bg-surface border-border text-foreground placeholder:text-faint-foreground focus:border-brand focus:ring-brand"
                       type="email"
                       placeholder="tu@email.com"
                       className="bg-white border-slate-300 text-slate-900 placeholder:text-slate-400 focus:border-brand-primary focus:ring-brand-primary"
@@ -67,7 +67,7 @@ export function ContactoSection() {
                 </div>
                 
                 <Field>
-                  <FieldLabel className="text-slate-600">Empresa</FieldLabel>
+                     className="bg-surface border-border text-foreground placeholder:text-faint-foreground focus:border-brand focus:ring-brand resize-none"
                   <Input 
                     type="text"
                     placeholder="Nombre de tu empresa"

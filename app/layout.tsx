@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import "../styles/globals.css"
+import "./globals.css"
 import { CustomCursor } from "@/components/custom-cursor"
 import { NavbarExecutive } from "@/components/navbar-executive"
 import { FooterExecutive } from "@/components/footer-executive"
@@ -23,9 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="scroll-smooth">
-      <body
-        className={`${inter.variable} font-sans bg-slate-50 text-slate-600 antialiased min-h-screen flex flex-col`}
-      >
+      <body className={`${inter.variable} font-sans antialiased min-h-screen flex flex-col`}>
         <CustomCursor />
         <NavbarExecutive />
         <div className="flex-1 flex flex-col">{children}</div>

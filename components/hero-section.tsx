@@ -59,6 +59,10 @@ function GridBackground() {
     const ctx = canvas.getContext("2d")
     if (!ctx) return
 
+    const brandColor =
+      getComputedStyle(document.documentElement).getPropertyValue("--brand").trim() ||
+      "#f26522"
+
     const resize = () => {
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
@@ -82,7 +86,8 @@ function GridBackground() {
       time += 0.005
 
       // Draw grid lines
-      ctx.strokeStyle = "rgba(249, 115, 22, 0.04)"
+      ctx.strokeStyle = brandColor
+      ctx.globalAlpha = 0.04
       ctx.lineWidth = 1
 
       // Horizontal lines with wave effect
@@ -128,7 +133,8 @@ function GridBackground() {
       }
 
       // Draw some floating data points
-      ctx.fillStyle = "rgba(249, 115, 22, 0.15)"
+      ctx.globalAlpha = 0.15
+      ctx.fillStyle = brandColor
       for (let i = 0; i < 20; i++) {
         const x = (Math.sin(time * 0.5 + i * 1.5) * 0.5 + 0.5) * canvas.width
         const y = (Math.cos(time * 0.3 + i * 1.2) * 0.5 + 0.5) * canvas.height
@@ -136,6 +142,7 @@ function GridBackground() {
         ctx.arc(x, y, 2, 0, Math.PI * 2)
         ctx.fill()
       }
+      ctx.globalAlpha = 1
 
       animationId = requestAnimationFrame(draw)
     }
@@ -160,7 +167,7 @@ function GridBackground() {
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-50">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-page">
       {/* Animated Grid Background */}
       <GridBackground />
 
@@ -170,7 +177,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6 text-balance text-slate-900"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6 text-balance text-foreground"
         >
           Transformamos tus servicios TI en una{" "}
           <span className="text-primary">plataforma segura</span>, estable y lista para{" "}
@@ -182,7 +189,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg md:text-xl text-slate-600 max-w-3xl mb-12 font-[var(--font-inter)]"
+          className="text-lg md:text-xl text-muted-foreground max-w-3xl mb-12 font-[var(--font-inter)]"
         >
           Consultoría especializada en infraestructura, cloud computing y ciberseguridad 
           para empresas que demandan excelencia operativa.
@@ -196,32 +203,32 @@ export function HeroSection() {
           className="flex flex-wrap items-center gap-8 mb-12 font-sans text-sm"
         >
           <div className="flex items-center gap-2">
-            <span className="text-3xl md:text-4xl font-bold text-slate-900">
+            <span className="text-3xl md:text-4xl font-bold text-foreground">
               <AnimatedCounter end={20} suffix="+" />
             </span>
-            <span className="text-slate-600 uppercase tracking-wider text-xs">
+            <span className="text-muted-foreground uppercase tracking-wider text-xs">
               Anos de<br />Experiencia
             </span>
           </div>
           
-          <div className="w-px h-12 bg-slate-200" />
+          <div className="w-px h-12 bg-border" />
           
           <div className="flex items-center gap-2">
-            <span className="text-3xl md:text-4xl font-bold text-slate-900">
+            <span className="text-3xl md:text-4xl font-bold text-foreground">
               24/7
             </span>
-            <span className="text-slate-600 uppercase tracking-wider text-xs">
+            <span className="text-muted-foreground uppercase tracking-wider text-xs">
               Soporte<br />Continuo
             </span>
           </div>
           
-          <div className="w-px h-12 bg-slate-200" />
+          <div className="w-px h-12 bg-border" />
           
           <div className="flex items-center gap-2">
-            <span className="text-3xl md:text-4xl font-bold text-slate-900">
+            <span className="text-3xl md:text-4xl font-bold text-foreground">
               <AnimatedCounter end={100} suffix="+" />
             </span>
-            <span className="text-slate-600 uppercase tracking-wider text-xs">
+            <span className="text-muted-foreground uppercase tracking-wider text-xs">
               Proyectos<br />MultiCloud
             </span>
           </div>
@@ -236,7 +243,7 @@ export function HeroSection() {
         >
           <Button
             size="lg"
-            className="bg-orange-500 text-slate-50 hover:bg-orange-600 rounded-none px-8 py-6 text-base font-semibold tracking-wide transition-all"
+            className="bg-brand text-brand-foreground hover:bg-brand-strong rounded-none px-8 py-6 text-base font-semibold tracking-wide transition-all"
           >
             Contactar a un Experto
           </Button>
@@ -244,7 +251,7 @@ export function HeroSection() {
           <Button
             size="lg"
             variant="outline"
-            className="rounded-none border-slate-200 bg-white text-slate-900 px-8 py-6 text-base font-semibold tracking-wide hover:border-orange-500 hover:text-orange-500 transition-colors"
+            className="rounded-none border-border bg-surface text-foreground px-8 py-6 text-base font-semibold tracking-wide hover:border-brand hover:text-brand transition-colors"
           >
             Nuestros Servicios
           </Button>

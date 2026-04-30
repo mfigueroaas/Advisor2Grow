@@ -15,7 +15,7 @@ export function InicioSection() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center overflow-hidden bg-slate-50"
+      className="relative min-h-screen flex items-center overflow-hidden bg-page"
     >
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -29,38 +29,38 @@ export function InicioSection() {
           >
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-slate-900 mb-8 leading-tight">
               Transformamos tus servicios TI en una plataforma{" "}
-              <span className="text-brand-primary">segura, estable y lista para crecer</span>
+              <span className="text-brand">segura, estable y lista para crecer</span>
             </h1>
             
             {/* Informacion de Contacto */}
             <div className="space-y-4 mb-10">
               <div className="flex items-center gap-4">
-                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-brand-primary/10 border border-brand-primary/20">
-                  <Mail className="w-5 h-5 text-brand-primary" />
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-brand/10 border border-brand/20">
+                  <Mail className="w-5 h-5 text-brand" />
                 </div>
                 <div>
-                  <p className="text-slate-500 text-sm">Correo</p>
-                  <p className="text-slate-900 font-medium">contacto@advisor2grow.com</p>
+                  <p className="text-faint-foreground text-sm">Correo</p>
+                  <p className="text-foreground font-medium">contacto@advisor2grow.com</p>
                 </div>
               </div>
               
               <div className="flex items-center gap-4">
-                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-brand-primary/10 border border-brand-primary/20">
-                  <MapPin className="w-5 h-5 text-brand-primary" />
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-brand/10 border border-brand/20">
+                  <MapPin className="w-5 h-5 text-brand" />
                 </div>
                 <div>
-                  <p className="text-slate-500 text-sm">Sede Central</p>
-                  <p className="text-slate-900 font-medium">Ciudad de Mexico, Mexico</p>
+                  <p className="text-faint-foreground text-sm">Sede Central</p>
+                  <p className="text-foreground font-medium">Ciudad de Mexico, Mexico</p>
                 </div>
               </div>
               
               <div className="flex items-center gap-4">
-                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-brand-primary/10 border border-brand-primary/20">
-                  <Phone className="w-5 h-5 text-brand-primary" />
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-brand/10 border border-brand/20">
+                  <Phone className="w-5 h-5 text-brand" />
                 </div>
                 <div>
-                  <p className="text-slate-500 text-sm">Telefono</p>
-                  <p className="text-slate-900 font-medium">+52 55 1234 5678</p>
+                  <p className="text-faint-foreground text-sm">Telefono</p>
+                  <p className="text-foreground font-medium">+52 55 1234 5678</p>
                 </div>
               </div>
             </div>
@@ -69,7 +69,7 @@ export function InicioSection() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 onClick={() => handleScrollTo("#contacto")}
-                className="bg-brand-primary hover:bg-brand-primary/90 text-slate-50 font-semibold px-8 py-6 text-lg transition-all duration-300 hover:shadow-[0_0_25px_rgba(242,101,34,0.5)]"
+                className="bg-brand hover:bg-brand-strong text-brand-foreground font-semibold px-8 py-6 text-lg transition-all duration-300 brand-glow-strong"
               >
                 Contactar
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -78,7 +78,7 @@ export function InicioSection() {
               <Button
                 variant="outline"
                 onClick={() => handleScrollTo("#servicios")}
-                className="border-slate-200 bg-white text-slate-900 hover:border-brand-primary hover:text-brand-primary px-8 py-6 text-lg transition-all duration-300"
+                className="border-border bg-surface text-foreground hover:border-brand hover:text-brand px-8 py-6 text-lg transition-all duration-300"
               >
                 Servicios
               </Button>

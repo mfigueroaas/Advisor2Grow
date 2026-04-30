@@ -30,35 +30,35 @@ function ServiceCard({
       <div className="absolute -bottom-1 -left-1 w-3 h-3 border-l border-b border-border group-hover:border-primary transition-colors duration-200" />
       <div className="absolute -bottom-1 -right-1 w-3 h-3 border-r border-b border-border group-hover:border-primary transition-colors duration-200" />
 
-      <div className="relative h-full bg-white border border-slate-200 p-6 transition-all duration-300 group-hover:border-orange-500 group-hover:shadow-md rounded-xl shadow-sm">
+      <div className="relative h-full bg-surface border border-border p-6 transition-all duration-300 group-hover:border-brand group-hover:shadow-md rounded-xl shadow-sm">
         {/* Code identifier */}
-        <div className="absolute top-3 right-3 font-sans text-[10px] text-slate-500 group-hover:text-orange-500 transition-colors">
+        <div className="absolute top-3 right-3 font-sans text-[10px] text-faint-foreground group-hover:text-brand transition-colors">
           [{service.code}]
         </div>
 
         {/* Icon */}
         <div className="mb-4 relative">
           <Icon
-            className="w-10 h-10 text-slate-500 group-hover:text-orange-500 transition-colors duration-200"
+            className="w-10 h-10 text-faint-foreground group-hover:text-brand transition-colors duration-200"
             strokeWidth={1}
           />
         </div>
 
         {/* Title */}
-        <h3 className="text-lg font-semibold mb-2 text-slate-900 group-hover:text-orange-500 transition-colors duration-200">
+        <h3 className="text-lg font-semibold mb-2 text-foreground group-hover:text-brand transition-colors duration-200">
           {service.title}
         </h3>
 
         {/* Description */}
-        <p className="text-sm text-slate-600 leading-relaxed font-[var(--font-inter)]">
+        <p className="text-sm text-muted-foreground leading-relaxed font-[var(--font-inter)]">
           {service.description}
         </p>
 
         {/* Bottom line indicator */}
-        <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-orange-500 group-hover:w-full transition-all duration-300" />
+        <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-brand group-hover:w-full transition-all duration-300" />
 
         {/* Hash detail */}
-        <div className="absolute bottom-3 right-3 font-sans text-[8px] text-slate-400 group-hover:text-orange-500/50 transition-colors">
+        <div className="absolute bottom-3 right-3 font-sans text-[8px] text-faint-foreground group-hover:text-brand/50 transition-colors">
           #A2G
         </div>
       </div>
@@ -71,7 +71,7 @@ export function ServicesSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section className="relative py-24 px-6 bg-slate-50" id="servicios">
+    <section className="relative py-24 px-6 bg-page" id="servicios">
 
       <div className="relative max-w-6xl mx-auto">
         {/* Section Header */}
@@ -82,10 +82,10 @@ export function ServicesSection() {
           transition={{ duration: 0.5 }}
           className="mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
             Nuestros Servicios
           </h2>
-          <p className="text-slate-600 max-w-2xl font-[var(--font-inter)]">
+          <p className="text-muted-foreground max-w-2xl font-[var(--font-inter)]">
             Soluciones integrales de tecnología diseñadas para impulsar 
             la transformación digital de tu empresa.
           </p>

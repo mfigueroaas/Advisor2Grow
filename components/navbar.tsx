@@ -19,10 +19,10 @@ function NavLink({ href, label, onClick }: { href: string; label: string; onClic
   return (
     <button
       onClick={handleClick}
-      className="relative text-sm font-medium text-gray-300 transition-colors duration-300 hover:text-brand-primary tracking-wide group cursor-pointer"
+      className="relative text-sm font-medium text-muted-foreground transition-colors duration-300 hover:text-brand tracking-wide group cursor-pointer"
     >
       {label}
-      <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-brand-primary transition-all duration-300 group-hover:w-full" />
+      <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-brand transition-all duration-300 group-hover:w-full" />
     </button>
   )
 }
@@ -40,7 +40,7 @@ function MobileNavLink({ href, label, onClick }: { href: string; label: string; 
     return (
     <button
       onClick={handleClick}
-      className="text-sm font-medium text-gray-300 transition-colors duration-300 hover:text-brand-primary py-2 text-left cursor-pointer"
+      className="text-sm font-medium text-muted-foreground transition-colors duration-300 hover:text-brand py-2 text-left cursor-pointer"
     >
       {label}
     </button>
@@ -75,7 +75,7 @@ export function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-200 shadow-sm transition-all duration-300"
+      className="fixed top-0 left-0 right-0 z-50 bg-surface border-b border-border shadow-sm transition-all duration-300"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <nav className="flex h-20 items-center justify-between">
@@ -108,7 +108,7 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-slate-600 hover:text-brand-primary transition-colors cursor-pointer"
+            className="md:hidden p-2 text-muted-foreground hover:text-brand transition-colors cursor-pointer"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -124,7 +124,7 @@ export function Navbar() {
           opacity: isMobileMenuOpen ? 1 : 0,
         }}
         transition={{ duration: 0.3 }}
-        className="md:hidden overflow-hidden bg-white border-b border-slate-200"
+        className="md:hidden overflow-hidden bg-surface border-b border-border"
       >
         <div className="px-4 py-4 flex flex-col gap-4">
           {navLinks.map((link) => (
