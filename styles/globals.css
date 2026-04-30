@@ -2,13 +2,13 @@
 
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --font-space: var(--font-space), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: var(--font-inter), 'Inter', sans-serif;
+  --font-space: var(--font-inter), 'Inter', sans-serif;
 }
 
 @layer base {
   body {
-    @apply bg-slate-950 text-slate-200 selection:bg-orange-500/30 selection:text-orange-100 cursor-none;
+    @apply bg-slate-50 text-slate-600 selection:bg-orange-500/20 selection:text-slate-900 cursor-none;
   }
 
   a, button, [role="button"] {
@@ -27,11 +27,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-slate-950;
+  @apply bg-slate-100;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-slate-800 rounded-none;
+  @apply bg-slate-300 rounded-none;
 }
 
 ::-webkit-scrollbar-thumb:hover {

@@ -24,21 +24,21 @@ export function TechStackHub() {
             <button
               key={`mobile-${tech.id}`}
               onClick={() => setActiveTech(tech)}
-              className={`relative flex flex-col items-center justify-center p-4 border transition-all duration-300
+              className={`relative flex flex-col items-center justify-center p-4 border transition-all duration-300 rounded-xl shadow-sm
                 ${isActive 
-                  ? 'bg-slate-900 border-orange-500 shadow-[0_0_15px_rgba(242,101,34,0.3)] z-10' 
-                  : 'bg-slate-950/50 border-slate-800 opacity-70 hover:opacity-100 hover:border-slate-600'
+                  ? 'bg-white border-orange-500 shadow-md z-10' 
+                  : 'bg-white border-slate-200 opacity-90 hover:opacity-100 hover:border-orange-500'
                 }
               `}
             >
               <Icon 
                 strokeWidth={isActive ? 2 : 1.5}
                 className={`w-8 h-8 mb-3 transition-colors duration-300 ${
-                  isActive ? 'text-orange-500' : 'text-slate-400'
+                  isActive ? 'text-orange-500' : 'text-slate-500'
                 }`} 
               />
-              <span className={`font-mono text-[10px] text-center uppercase tracking-wider ${
-                isActive ? 'text-orange-500' : 'text-slate-500'
+              <span className={`font-sans text-[10px] text-center uppercase tracking-wider ${
+                isActive ? 'text-orange-500' : 'text-slate-600'
               }`}>
                 {tech.brand}
               </span>
@@ -50,15 +50,15 @@ export function TechStackHub() {
       {/* --- VERSIÓN DESKTOP: Rueda Radial --- */}
       <div className="hidden lg:flex relative w-full lg:w-1/2 h-[500px] items-center justify-center">
         {/* Anillos decorativos de fondo */}
-        <div className="absolute inset-0 m-auto w-[380px] h-[380px] rounded-full border border-slate-800/40 pointer-events-none"></div>
-        <div className="absolute inset-0 m-auto w-[260px] h-[260px] rounded-full border border-slate-700/20 border-dashed pointer-events-none animate-[spin_60s_linear_infinite]"></div>
+        <div className="absolute inset-0 m-auto w-[380px] h-[380px] rounded-full border border-slate-200 pointer-events-none"></div>
+        <div className="absolute inset-0 m-auto w-[260px] h-[260px] rounded-full border border-slate-200 border-dashed pointer-events-none animate-[spin_60s_linear_infinite]"></div>
         
         {/* Centro de la rueda */}
-        <div className="absolute inset-0 m-auto w-24 h-24 bg-slate-900 border border-slate-700 flex items-center justify-center z-10 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+        <div className="absolute inset-0 m-auto w-24 h-24 bg-white border border-slate-200 flex items-center justify-center z-10 shadow-sm">
           <div className="w-16 h-16 border border-orange-500/30 flex items-center justify-center animate-[spin_10s_linear_infinite_reverse]">
             <div className="w-8 h-8 bg-orange-500/10 border border-orange-500"></div>
           </div>
-          <span className="absolute font-mono text-[10px] text-orange-500 text-center leading-tight">
+          <span className="absolute font-sans text-[10px] text-orange-500 text-center leading-tight font-semibold">
             NÚCLEO<br/>CENTRAL
           </span>
         </div>
@@ -111,10 +111,10 @@ export function TechStackHub() {
               {/* Botón del Nodo */}
               <button
                 onClick={() => setActiveTech(tech)}
-                className={`relative w-20 h-20 flex items-center justify-center bg-slate-900/80 backdrop-blur-sm border transition-all duration-300 group cursor-crosshair
+                className={`relative w-20 h-20 flex items-center justify-center bg-white border transition-all duration-300 group cursor-pointer
                   ${isActive 
-                    ? 'border-orange-500 shadow-[0_0_20px_rgba(242,101,34,0.4)] scale-110 z-30' 
-                    : 'border-slate-700 opacity-60 hover:opacity-100 hover:border-slate-500 hover:scale-105'
+                    ? 'border-orange-500 shadow-md scale-110 z-30' 
+                    : 'border-slate-200 opacity-80 hover:opacity-100 hover:border-orange-500 hover:scale-105'
                   }
                   rounded-none
                 `}
@@ -123,16 +123,16 @@ export function TechStackHub() {
                 <Icon 
                   strokeWidth={isActive ? 2 : 1.5}
                   className={`w-10 h-10 transition-colors duration-300 ${
-                    isActive ? 'text-orange-500' : 'text-slate-400 group-hover:text-slate-200'
+                    isActive ? 'text-orange-500' : 'text-slate-500 group-hover:text-orange-500'
                   }`} 
                 />
               </button>
 
               {/* Etiqueta flotante */}
-              <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 whitespace-nowrap font-mono text-[11px] uppercase transition-all duration-300 pointer-events-none px-2 py-1 bg-slate-950 border border-slate-800
+              <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 whitespace-nowrap font-sans text-[11px] uppercase transition-all duration-300 pointer-events-none px-2 py-1 bg-white border border-slate-200 rounded-md shadow-sm
                 ${isActive ? 'text-orange-500 border-orange-500/50 opacity-100 translate-y-0' : 'text-slate-500 opacity-0 -translate-y-2'}
               `}>
-                [{tech.brand}]
+                {tech.brand}
               </div>
             </div>
           )
@@ -142,7 +142,7 @@ export function TechStackHub() {
       {/* Lado Derecho: Panel de Diagnóstico (HUD) */}
       <div className="w-full lg:w-1/2 relative">
         {/* Fondo del Panel */}
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-md border border-slate-800 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-white border border-slate-200 pointer-events-none shadow-sm"></div>
         
         {/* Decoraciones de esquina */}
         <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-orange-500"></div>
@@ -150,10 +150,10 @@ export function TechStackHub() {
 
         <div className="relative p-6 md:p-8 lg:p-12 min-h-[350px] md:min-h-[400px] flex flex-col">
           {/* Header del Panel */}
-          <div className="flex items-center gap-3 mb-6 md:mb-8 border-b border-slate-800 pb-4">
+          <div className="flex items-center gap-3 mb-6 md:mb-8 border-b border-slate-200 pb-4">
             <div className="w-2 h-2 md:w-3 md:h-3 bg-orange-500 animate-pulse"></div>
-            <div className="font-mono text-[10px] md:text-xs text-orange-500 tracking-widest uppercase">
-              [SIST.DATOS // DETALLES_TEC]
+            <div className="font-sans text-[10px] md:text-xs text-orange-500 tracking-widest uppercase font-semibold">
+              Detalles técnicos
             </div>
           </div>
 
@@ -168,32 +168,32 @@ export function TechStackHub() {
                 transition={{ duration: 0.4, ease: "easeOut" }}
                 className="flex flex-col h-full justify-center"
               >
-                <div className="font-mono text-slate-500 text-xs md:text-sm mb-2 md:mb-4 uppercase">
+                <div className="font-sans text-slate-500 text-xs md:text-sm mb-2 md:mb-4 uppercase">
                   &gt; SECTOR_IDENTIFICADO
                 </div>
-                <h3 className="text-2xl md:text-4xl lg:text-5xl font-space font-bold text-white mb-2 leading-tight">
+                <h3 className="text-2xl md:text-4xl lg:text-5xl font-sans font-bold text-slate-900 mb-2 leading-tight">
                   {activeTech.brand}
                 </h3>
-                <h4 className="text-base md:text-xl font-space text-orange-500 mb-4 md:mb-8 uppercase tracking-wide">
+                <h4 className="text-base md:text-xl font-sans text-orange-500 mb-4 md:mb-8 uppercase tracking-wide font-semibold">
                   // {activeTech.subtitle}
                 </h4>
                 
                 <div className="relative">
-                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-slate-800"></div>
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-slate-200"></div>
                   <div className="absolute left-0 top-0 w-1 h-1/3 bg-orange-500"></div>
-                  <p className="font-inter text-slate-300 text-sm md:text-lg leading-relaxed pl-4 md:pl-6">
+                  <p className="font-inter text-slate-600 text-sm md:text-lg leading-relaxed pl-4 md:pl-6">
                     {activeTech.description}
                   </p>
                 </div>
                 
                 {/* HUD Footer status */}
-                <div className="mt-8 md:mt-12 pt-4 md:pt-6 border-t border-slate-800/50 flex justify-between items-center font-mono text-[10px] md:text-xs text-slate-600">
+                <div className="mt-8 md:mt-12 pt-4 md:pt-6 border-t border-slate-200 flex justify-between items-center font-sans text-[10px] md:text-xs text-slate-600">
                   <div className="flex items-center gap-2">
-                    <span className="hidden sm:inline">ESTADO_MÓDULO:</span>
-                    <span className="sm:hidden">ESTADO:</span>
-                    <span className="text-orange-500">EN_LÍNEA</span>
+                    <span className="hidden sm:inline">Estado del módulo:</span>
+                    <span className="sm:hidden">Estado:</span>
+                    <span className="text-orange-500">Operativo</span>
                   </div>
-                  <div>TASA_SINC: 99.9%</div>
+                  <div>Sincronización estable</div>
                 </div>
               </motion.div>
             </AnimatePresence>

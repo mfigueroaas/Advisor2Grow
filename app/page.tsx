@@ -7,36 +7,31 @@ import { AnimatedHeading } from "@/components/motion/animated-heading"
 
 export default function Home() {
   return (
-    <main className="flex-1 flex flex-col pt-16 md:pt-20 relative bg-slate-950 overflow-hidden">
-      {/* Background Effect: Grid tenue */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-      
-      {/* Luz tenue naranja en el fondo */}
-      <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[300px] w-[300px] md:h-[400px] md:w-[400px] rounded-full bg-orange-500 opacity-20 blur-[80px] md:blur-[120px] pointer-events-none"></div>
+    <main className="flex-1 flex flex-col pt-16 md:pt-20 relative bg-slate-50 overflow-hidden">
 
       {/* 1. Hero Section */}
-      <section className="relative w-full max-w-7xl mx-auto px-4 md:px-6 pt-24 md:pt-32 pb-16 md:pb-24 min-h-[90vh] flex flex-col justify-center border-x border-slate-800/30">
+      <section className="relative w-full max-w-7xl mx-auto px-4 md:px-6 pt-24 md:pt-32 pb-16 md:pb-24 min-h-[90vh] flex flex-col justify-center border-x border-slate-200">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           
           {/* Columna Izquierda: Texto y CTA */}
           <div className="flex flex-col space-y-6 md:space-y-8">
-            <FadeIn className="text-slate-400 tracking-widest text-xs md:text-sm uppercase font-semibold" y={14} duration={0.4}>
+            <FadeIn className="text-brand-primary tracking-widest text-xs md:text-sm uppercase font-semibold" y={14} duration={0.4}>
               Consultoría Líder en TI
             </FadeIn>
 
-            <AnimatedHeading as="h1" className="text-4xl md:text-6xl lg:text-5xl xl:text-6xl font-space font-bold text-white leading-[1.05]" delay={0.08} duration={0.55}>
+            <AnimatedHeading as="h1" className="text-4xl md:text-6xl lg:text-5xl xl:text-6xl font-sans font-bold text-slate-900 leading-[1.05]" delay={0.08} duration={0.55}>
               Transformamos tus servicios TI en una plataforma segura, estable y lista para crecer.
             </AnimatedHeading>
 
-            <FadeIn className="text-slate-400 font-inter text-base md:text-xl leading-relaxed" delay={0.16} duration={0.5}>
+            <FadeIn className="text-slate-600 font-inter text-base md:text-xl leading-relaxed" delay={0.16} duration={0.5}>
               Somos una empresa joven y ágil, respaldada por más de 20 años de experiencia liderando servicios de infraestructura, nube y continuidad operativa para grandes corporaciones. Diseñamos, implementamos y operamos soluciones TI modernas con foco en resiliencia y ciberseguridad.
             </FadeIn>
 
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 pt-4">
-              <Link href="/contacto" className="px-6 py-3 md:px-8 md:py-4 bg-orange-500 text-white font-space font-bold tracking-widest hover:bg-orange-600 transition-colors text-center uppercase text-xs md:text-sm border border-orange-500">
+              <Link href="/contacto" className="px-6 py-3 md:px-8 md:py-4 bg-orange-500 text-slate-50 font-sans font-bold tracking-widest hover:bg-orange-600 transition-colors text-center uppercase text-xs md:text-sm border border-orange-500">
                 Contactar a un Experto
               </Link>
-              <Link href="/servicios" className="px-6 py-3 md:px-8 md:py-4 border border-orange-500 text-orange-500 font-space font-bold tracking-widest hover:bg-orange-500/10 transition-colors text-center uppercase text-xs md:text-sm bg-black/20 backdrop-blur-sm">
+              <Link href="/servicios" className="px-6 py-3 md:px-8 md:py-4 border border-orange-500 text-orange-500 font-sans font-bold tracking-widest hover:bg-orange-500/10 transition-colors text-center uppercase text-xs md:text-sm bg-white">
                 Explorar Servicios
               </Link>
             </div>
@@ -50,7 +45,7 @@ export default function Home() {
                 alt="Advisor2Grow Infraestructura TI"
                 width={468}
                 height={283}
-                className="w-full h-auto object-contain rounded-sm shadow-[0_0_40px_rgba(249,115,22,0.15)]"
+                className="w-full h-auto object-contain rounded-sm shadow-sm"
                 priority
               />
             </div>
@@ -59,34 +54,34 @@ export default function Home() {
         </div>
 
         {/* Banner de Estadísticas de Ancho Completo */}
-        <FadeIn className="w-full mt-16 md:mt-20 border-t border-slate-800/50 pt-10" delay={0.12} duration={0.5}>
+        <FadeIn className="w-full mt-16 md:mt-20 border-t border-slate-200 pt-10" delay={0.12} duration={0.5}>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12">
             <div className="flex flex-col items-center sm:items-start">
-              <div className="font-mono text-xs md:text-sm text-slate-500 mb-2 uppercase tracking-widest">EXPERIENCIA</div>
-              <div className="font-space text-3xl md:text-4xl lg:text-5xl font-bold text-brand-primary">20+ años</div>
+              <div className="font-sans text-xs md:text-sm text-slate-500 mb-2 uppercase tracking-widest">EXPERIENCIA</div>
+              <div className="font-sans text-3xl md:text-4xl lg:text-5xl font-bold text-brand-primary">20+ años</div>
             </div>
             <div className="flex flex-col items-center sm:items-start">
-              <div className="font-mono text-xs md:text-sm text-slate-500 mb-2 uppercase tracking-widest">ENFOQUE</div>
-              <div className="font-space text-3xl md:text-4xl lg:text-5xl font-bold text-brand-primary">Continuidad 24/7</div>
+              <div className="font-sans text-xs md:text-sm text-slate-500 mb-2 uppercase tracking-widest">ENFOQUE</div>
+              <div className="font-sans text-3xl md:text-4xl lg:text-5xl font-bold text-brand-primary">Continuidad 24/7</div>
             </div>
             <div className="flex flex-col items-center sm:items-start">
-              <div className="font-mono text-xs md:text-sm text-slate-500 mb-2 uppercase tracking-widest">ÁMBITOS</div>
-              <div className="font-space text-3xl md:text-4xl lg:text-5xl font-bold text-brand-primary">Infra & MultiCloud</div>
+              <div className="font-sans text-xs md:text-sm text-slate-500 mb-2 uppercase tracking-widest">ÁMBITOS</div>
+              <div className="font-sans text-3xl md:text-4xl lg:text-5xl font-bold text-brand-primary">Infra & MultiCloud</div>
             </div>
           </div>
         </FadeIn>
       </section>
 
       {/* 2. Sección Continuidad y Rueda Tecnológica */}
-      <section className="relative w-full border-y border-slate-800 bg-slate-950/60 backdrop-blur-xl py-16 md:py-24 overflow-hidden">
+      <section className="relative w-full border-y border-slate-200 bg-white py-16 md:py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 md:px-6 mb-8 md:mb-12">
           <FadeIn delay={0.02} duration={0.4}>
             <div className="w-12 h-1 bg-orange-500 mb-6 md:mb-8" />
           </FadeIn>
-          <AnimatedHeading as="h2" className="text-3xl md:text-5xl font-space font-bold text-white mb-4 md:mb-6" delay={0.08} duration={0.55}>
+          <AnimatedHeading as="h2" className="text-3xl md:text-5xl font-sans font-bold text-slate-900 mb-4 md:mb-6" delay={0.08} duration={0.55}>
             Aseguramos tu continuidad operativa
           </AnimatedHeading>
-          <FadeIn className="text-slate-400 font-inter text-base md:text-lg leading-relaxed text-left md:text-justify max-w-4xl" delay={0.16} duration={0.5}>
+          <FadeIn className="text-slate-600 font-inter text-base md:text-lg leading-relaxed text-left md:text-justify max-w-4xl" delay={0.16} duration={0.5}>
             Identificamos brechas, fortalecemos tu infraestructura y aplicamos buenas prácticas internacionales para que la operación de tu negocio se mantenga estable, segura y preparada ante ciberataques, fallos y cambios regulatorios. Chile es uno de los países más atacados de la región. Te ayudamos a reducir riesgos, proteger tu información y garantizar la continuidad de tus servicios.
           </FadeIn>
         </div>
@@ -98,7 +93,7 @@ export default function Home() {
       <BrandsSuccessSection />
 
       {/* 3. Grid de Características */}
-      <section className="w-full max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24 border-x border-slate-800/30">
+      <section className="w-full max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24 border-x border-slate-200">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {[ 
             {
@@ -119,20 +114,17 @@ export default function Home() {
             }
           ].map((feat, i) => (
             <FadeIn key={i} delay={0.08 * i} duration={0.45}>
-              <div className="p-6 md:p-10 border border-slate-800 bg-slate-950/40 hover:bg-slate-950/80 hover:border-orange-500 transition-all duration-300 group cursor-crosshair">
-                <div className="font-mono text-slate-600 group-hover:text-orange-500 mb-4 md:mb-6 text-xs md:text-sm transition-colors duration-300">
-                  [0{i+1}] // MÓDULO
-                </div>
-                <h3 className="font-space text-xl md:text-2xl font-bold text-white mb-2 md:mb-4 group-hover:text-orange-500 transition-colors duration-300">
+              <div className="p-6 md:p-10 border border-slate-200 bg-white shadow-sm hover:border-orange-500 hover:shadow-md transition-all duration-300 group cursor-crosshair rounded-xl">
+                <h3 className="font-sans text-xl md:text-2xl font-bold text-slate-900 mb-2 md:mb-4 group-hover:text-orange-500 transition-colors duration-300">
                   {feat.title}
                 </h3>
-                <p className="font-inter text-slate-400 text-base md:text-lg">
+                <p className="font-inter text-slate-600 text-base md:text-lg">
                   {feat.desc}
                 </p>
                 
                 {/* Decorative HUD element inside card */}
                 <div className="mt-6 md:mt-8 flex justify-end">
-                  <div className="w-8 h-[1px] bg-slate-700 group-hover:bg-orange-500 group-hover:w-16 transition-all duration-300"></div>
+                  <div className="w-8 h-[1px] bg-slate-300 group-hover:bg-orange-500 group-hover:w-16 transition-all duration-300"></div>
                 </div>
               </div>
             </FadeIn>

@@ -25,9 +25,6 @@ export function Footer() {
           transition={{ duration: 0.5 }}
           className="mb-16 text-center"
         >
-          <span className="font-mono text-xs tracking-widest text-primary mb-4 block">
-            [CONTACT.INIT // CONNECT]
-          </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Hablemos de tu Proyecto
           </h2>
@@ -132,7 +129,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="font-mono text-xs text-muted-foreground">
-            [SYS.COPYRIGHT // 2024 ADVISOR2GROW]
+            © 2026 Advisor2Grow. Todos los derechos reservados.
           </div>
           <div className="flex gap-6 text-xs text-muted-foreground font-[var(--font-inter)]">
             <a href="#" className="hover:text-primary transition-colors">
@@ -144,9 +141,6 @@ export function Footer() {
             <a href="#" className="hover:text-primary transition-colors">
               Cookies
             </a>
-          </div>
-          <div className="font-mono text-[10px] text-muted-foreground/50">
-            BUILD.v2.4.1 // STATUS: OPERATIONAL
           </div>
         </div>
       </div>

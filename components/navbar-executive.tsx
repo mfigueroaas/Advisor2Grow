@@ -20,30 +20,30 @@ export function NavbarExecutive() {
   const links = navbarExecLinks
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo Placeholder */}
         <Link href="/" className="flex items-center gap-3 group z-50">
           <Image
-            src="/Imagenes/hero-principal.png"
+            src="/Imagenes/Logos/logo-dark.png"
             alt="Logo Advisor2Grow"
             width={66}
             height={40}
-            className="w-auto h-10 brightness-110 drop-shadow-[0_2px_8px_rgba(242,101,34,0.2)]"
+            className="w-auto h-10 object-contain"
           />
-          <span className="text-xl font-bold text-white tracking-wide">Advisor<span className="text-orange-500">2</span>Grow</span>
+          <span className="text-xl font-bold text-slate-900 tracking-wide font-sans">Advisor<span className="text-brand-primary">2</span>Grow</span>
         </Link>
 
         {/* Mobile Menu */}
         <div className="lg:hidden">
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-              <button className="text-slate-300 hover:text-white p-2">
+              <button className="text-slate-600 hover:text-brand-primary p-2">
                 <Menu className="w-6 h-6" />
                 <span className="sr-only">Toggle menu</span>
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-slate-950 border-l-slate-800 p-0 w-[300px]">
+            <SheetContent side="right" className="bg-white border-l border-slate-200 p-0 w-[300px]">
               <SheetTitle className="sr-only">Menú de navegación</SheetTitle>
               <div className="flex flex-col h-full pt-24 px-6 pb-6">
                 <div className="flex flex-col gap-6 flex-1">
@@ -53,13 +53,13 @@ export function NavbarExecutive() {
                       <SheetClose asChild key={link.href}>
                         <Link
                           href={link.href}
-                          className={`font-mono text-sm tracking-widest transition-colors uppercase ${
+                          className={`font-sans text-sm font-medium transition-colors ${
                             isActive
-                              ? "text-orange-500"
-                              : "text-slate-400 hover:text-orange-400"
+                              ? "text-brand-primary"
+                              : "text-slate-600 hover:text-brand-primary"
                           }`}
                         >
-                          [{link.label}]
+                          {link.label}
                         </Link>
                       </SheetClose>
                     )
@@ -67,14 +67,14 @@ export function NavbarExecutive() {
                 </div>
                 
                 <div className="flex flex-col gap-6 mt-auto">
-                  <div className="h-px w-full bg-slate-800"></div>
-                  <div className="font-mono text-sm text-slate-300">
-                    <span className="text-orange-500">TEL:</span><br/>+56 9 9249 2509
+                  <div className="h-px w-full bg-slate-200"></div>
+                  <div className="font-sans text-sm text-slate-600">
+                    <span className="text-brand-primary">TEL:</span><br/>+56 9 9249 2509
                   </div>
                   <SheetClose asChild>
                     <Link 
                       href="/contacto"
-                      className="px-6 py-3 bg-orange-500 text-white font-space text-sm font-bold tracking-widest hover:bg-orange-600 transition-colors text-center"
+                      className="px-6 py-3 bg-orange-500 text-slate-50 font-sans text-sm font-bold hover:bg-orange-600 transition-colors text-center"
                     >
                       CONTÁCTANOS
                     </Link>
@@ -94,27 +94,27 @@ export function NavbarExecutive() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`font-mono text-xs tracking-widest transition-colors uppercase ${
+                  className={`font-sans text-sm font-medium transition-colors ${
                     isActive
-                      ? "text-orange-500"
-                      : "text-slate-400 hover:text-orange-400"
+                      ? "text-brand-primary"
+                      : "text-slate-600 hover:text-brand-primary"
                   }`}
                 >
-                  [{link.label}]
+                  {link.label}
                 </Link>
               )
             })}
           </div>
           
-          <div className="h-6 w-px bg-slate-800"></div>
+          <div className="h-6 w-px bg-slate-200"></div>
           
           <div className="flex items-center gap-6">
-            <div className="font-mono text-sm text-slate-300">
-              <span className="text-orange-500">TEL:</span> +56 9 9249 2509
+            <div className="font-sans text-sm text-slate-600">
+              <span className="text-brand-primary">TEL:</span> +56 9 9249 2509
             </div>
             <Link 
               href="/contacto"
-              className="px-6 py-2 bg-orange-500 text-white font-space text-sm font-bold tracking-widest hover:bg-orange-600 transition-colors rounded-none"
+              className="px-6 py-2 bg-orange-500 text-slate-50 font-sans text-sm font-bold hover:bg-orange-600 transition-colors rounded-none"
             >
               CONTÁCTANOS
             </Link>

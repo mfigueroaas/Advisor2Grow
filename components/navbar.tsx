@@ -75,11 +75,7 @@ export function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? "bg-[#1a2332]/90 backdrop-blur-md border-b border-[#2d3d52]" 
-          : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-200 shadow-sm transition-all duration-300"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <nav className="flex h-20 items-center justify-between">
@@ -89,11 +85,11 @@ export function Navbar() {
             className="flex-shrink-0 cursor-pointer"
           >
             <Image
-              src="/Imagenes/hero-principal.png"
+              src="/Imagenes/Logos/logo-dark.png"
               alt="Logo Advisor2Grow"
               width={66}
               height={40}
-              className="w-auto h-10 brightness-110 drop-shadow-[0_2px_8px_rgba(242,101,34,0.2)]"
+              className="w-auto h-10 object-contain"
             />
           </button>
 
@@ -112,7 +108,7 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-gray-300 hover:text-brand-primary transition-colors cursor-pointer"
+            className="md:hidden p-2 text-slate-600 hover:text-brand-primary transition-colors cursor-pointer"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -128,7 +124,7 @@ export function Navbar() {
           opacity: isMobileMenuOpen ? 1 : 0,
         }}
         transition={{ duration: 0.3 }}
-        className="md:hidden overflow-hidden bg-[#1a2332]/95 backdrop-blur-md border-b border-[#2d3d52]"
+        className="md:hidden overflow-hidden bg-white border-b border-slate-200"
       >
         <div className="px-4 py-4 flex flex-col gap-4">
           {navLinks.map((link) => (

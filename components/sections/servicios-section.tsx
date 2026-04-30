@@ -8,22 +8,9 @@ export function ServiciosSection() {
   return (
     <section
       id="servicios"
-      className="relative py-24 bg-[#1a2332]"
+      className="relative py-24 bg-slate-50"
     >
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div 
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(242, 101, 34, 0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(242, 101, 34, 0.1) 1px, transparent 1px)
-            `,
-            backgroundSize: '80px 80px'
-          }}
-        />
-      </div>
-
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -33,10 +20,10 @@ export function ServiciosSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4">
             Nuestros <span className="text-brand-primary">Servicios</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="text-slate-600 max-w-2xl mx-auto text-lg">
             Soluciones integrales de tecnologia para impulsar el crecimiento de tu empresa.
           </p>
         </motion.div>
@@ -50,24 +37,21 @@ export function ServiciosSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative p-6 bg-[#1e2a3d] border border-[#2d3d52] hover:border-brand-primary transition-all duration-300 overflow-hidden"
+              className="group relative p-6 bg-white border border-slate-200 hover:border-orange-500 hover:shadow-md transition-all duration-300 overflow-hidden rounded-xl shadow-sm"
             >
-              {/* Hover Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              
               <div className="relative z-10">
                 {/* Icon */}
-                <div className="mb-4 inline-flex p-3 bg-[#243246] border border-[#2d3d52] group-hover:border-brand-primary/50 transition-colors">
+                <div className="mb-4 inline-flex p-3 bg-slate-50 border border-slate-200 group-hover:border-orange-500 transition-colors rounded-lg">
                   <service.icon className="h-8 w-8 text-brand-primary" strokeWidth={1.5} />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-brand-primary transition-colors">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-orange-500 transition-colors">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
                   {service.description}
                 </p>
 
@@ -76,7 +60,7 @@ export function ServiciosSection() {
                   {service.features.map((feature) => (
                     <span 
                       key={feature}
-                      className="text-xs px-2 py-1 bg-[#243246] text-gray-300 border border-[#2d3d52]"
+                      className="text-xs px-2 py-1 bg-slate-50 text-slate-600 border border-slate-200 rounded-md"
                     >
                       {feature}
                     </span>
@@ -90,7 +74,7 @@ export function ServiciosSection() {
                     e.preventDefault()
                     document.querySelector("#contacto")?.scrollIntoView({ behavior: "smooth" })
                   }}
-                  className="inline-flex items-center text-sm text-brand-primary hover:text-brand-primary/80 transition-colors"
+                  className="inline-flex items-center text-sm text-brand-primary hover:text-orange-500 transition-colors"
                 >
                   Saber mas
                   <ArrowRight className="ml-1 h-4 w-4" />

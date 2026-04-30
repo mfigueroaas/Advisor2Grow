@@ -12,14 +12,14 @@ function TeamCard({ member, index }: { member: typeof teamMembers[0]; index: num
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative bg-slate-800/40 border border-slate-700/50 overflow-hidden transition-all duration-300 hover:border-brand-primary"
+      className="group relative bg-white border border-slate-200 overflow-hidden transition-all duration-300 hover:border-orange-500 hover:shadow-md rounded-xl shadow-sm"
     >
       {/* Card Content */}
       <div className="p-6">
         {/* Photo Placeholder */}
         <div className="relative mb-6 overflow-hidden">
-          <div className="aspect-square bg-slate-700 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-            <span className="text-gray-400 text-sm text-center px-4">
+          <div className="aspect-square bg-slate-50 border border-slate-200 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 rounded-lg">
+            <span className="text-slate-500 text-sm text-center px-4">
               [ESPACIO PARA FOTO DE PERFIL]
             </span>
           </div>
@@ -27,25 +27,25 @@ function TeamCard({ member, index }: { member: typeof teamMembers[0]; index: num
 
         {/* Name and Role */}
         <div className="text-center">
-          <h3 className="text-xl font-semibold text-white mb-1">
+          <h3 className="text-xl font-semibold text-slate-900 mb-1">
             {member.name}
           </h3>
-          <p className="text-brand-primary text-sm font-medium">
+          <p className="text-slate-600 text-sm font-medium">
             {member.role}
           </p>
         </div>
       </div>
 
       {/* Overlay Panel - Slides up on hover */}
-      <div className="absolute inset-0 bg-[#1a2332]/95 flex flex-col items-center justify-center p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
-        <p className="text-gray-300 text-sm text-center leading-relaxed mb-6">
+      <div className="absolute inset-0 bg-white/95 flex flex-col items-center justify-center p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out border-t border-slate-200">
+        <p className="text-slate-600 text-sm text-center leading-relaxed mb-6">
           {member.description}
         </p>
         <a
           href={member.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-brand-primary hover:text-white transition-colors cursor-hover"
+          className="flex items-center gap-2 text-brand-primary hover:text-orange-500 transition-colors cursor-pointer"
         >
           <Linkedin className="h-5 w-5" />
           <span className="text-sm font-medium">LinkedIn</span>
@@ -59,7 +59,7 @@ export function NosotrosSection() {
   return (
     <section
       id="nosotros"
-      className="relative py-24 bg-[#1e2a3d]"
+      className="relative py-24 bg-slate-50"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -70,10 +70,10 @@ export function NosotrosSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4">
             Conoce a Nuestro <span className="text-brand-primary">Equipo</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="text-slate-600 max-w-2xl mx-auto text-lg">
             Profesionales certificados con amplia experiencia en las principales tecnologias del mercado.
           </p>
         </motion.div>

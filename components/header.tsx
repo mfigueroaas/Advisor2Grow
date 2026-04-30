@@ -38,9 +38,6 @@ export function Header() {
             <span className="text-xl font-bold text-primary">2</span>
             <span className="text-xl font-bold text-foreground">Grow</span>
           </div>
-          <span className="font-mono text-[8px] text-muted-foreground hidden sm:block">
-            [v2.0]
-          </span>
         </a>
 
         {/* Desktop Navigation */}

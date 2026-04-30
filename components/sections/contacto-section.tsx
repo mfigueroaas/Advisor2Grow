@@ -18,7 +18,7 @@ export function ContactoSection() {
   return (
     <section
       id="contacto"
-      className="relative py-24 bg-[#1e2a3d]"
+      className="relative py-24 bg-slate-50"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -29,10 +29,10 @@ export function ContactoSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4">
               <span className="text-brand-primary">Contacto</span>
             </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="text-slate-600 max-w-2xl mx-auto text-lg">
             Estamos listos para ayudarte. Contactanos y transformemos juntos tu infraestructura TI.
           </p>
         </motion.div>
@@ -49,45 +49,45 @@ export function ContactoSection() {
               <FieldGroup>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <Field>
-                    <FieldLabel className="text-gray-300">Nombre</FieldLabel>
+                    <FieldLabel className="text-slate-600">Nombre</FieldLabel>
                     <Input 
                       type="text"
                       placeholder="Tu nombre"
-                      className="bg-[#243246] border-[#2d3d52] text-white placeholder:text-gray-500 focus:border-brand-primary focus:ring-brand-primary"
+                      className="bg-white border-slate-300 text-slate-900 placeholder:text-slate-400 focus:border-brand-primary focus:ring-brand-primary"
                     />
                   </Field>
                   <Field>
-                    <FieldLabel className="text-gray-300">Email</FieldLabel>
+                    <FieldLabel className="text-slate-600">Email</FieldLabel>
                     <Input 
                       type="email"
                       placeholder="tu@email.com"
-                      className="bg-[#243246] border-[#2d3d52] text-white placeholder:text-gray-500 focus:border-brand-primary focus:ring-brand-primary"
+                      className="bg-white border-slate-300 text-slate-900 placeholder:text-slate-400 focus:border-brand-primary focus:ring-brand-primary"
                     />
                   </Field>
                 </div>
                 
                 <Field>
-                  <FieldLabel className="text-gray-300">Empresa</FieldLabel>
+                  <FieldLabel className="text-slate-600">Empresa</FieldLabel>
                   <Input 
                     type="text"
                     placeholder="Nombre de tu empresa"
-                    className="bg-[#243246] border-[#2d3d52] text-white placeholder:text-gray-500 focus:border-brand-primary focus:ring-brand-primary"
+                    className="bg-white border-slate-300 text-slate-900 placeholder:text-slate-400 focus:border-brand-primary focus:ring-brand-primary"
                   />
                 </Field>
 
                 <Field>
-                  <FieldLabel className="text-gray-300">Mensaje</FieldLabel>
+                  <FieldLabel className="text-slate-600">Mensaje</FieldLabel>
                   <Textarea 
                     placeholder="Cuentanos sobre tu proyecto..."
                     rows={5}
-                    className="bg-[#243246] border-[#2d3d52] text-white placeholder:text-gray-500 focus:border-brand-primary focus:ring-brand-primary resize-none"
+                    className="bg-white border-slate-300 text-slate-900 placeholder:text-slate-400 focus:border-brand-primary focus:ring-brand-primary resize-none"
                   />
                 </Field>
               </FieldGroup>
 
               <Button
                 type="submit"
-                  className="w-full bg-brand-primary hover:bg-brand-primary/90 text-white font-semibold py-6 transition-all duration-300 hover:shadow-[0_0_25px_rgba(242,101,34,0.5)]"
+                  className="w-full bg-brand-primary hover:bg-orange-600 text-slate-50 font-semibold py-6 transition-all duration-300"
               >
                 Enviar Mensaje
                 <Send className="ml-2 h-5 w-5" />
@@ -104,10 +104,10 @@ export function ContactoSection() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold text-white mb-4">
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">
                 Hablemos de tu proyecto
               </h3>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed">
                 Nuestro equipo de expertos esta listo para analizar tus necesidades y disenar una solucion a medida. No dudes en contactarnos.
               </p>
             </div>
@@ -117,14 +117,14 @@ export function ContactoSection() {
                 <a
                   key={info.label}
                   href={info.href}
-                    className="flex items-center gap-4 p-4 bg-[#243246] border border-[#2d3d52] hover:border-brand-primary/50 transition-colors group"
+                    className="flex items-center gap-4 p-4 bg-white border border-slate-200 hover:border-orange-500 hover:shadow-md transition-all duration-300 group rounded-xl shadow-sm"
                 >
-                  <div className="p-3 bg-[#1a2332] border border-[#2d3d52] group-hover:border-brand-primary/50 transition-colors">
+                  <div className="p-3 bg-slate-50 border border-slate-200 group-hover:border-orange-500 transition-colors rounded-lg">
                       <info.icon className="h-5 w-5 text-brand-primary" />
                   </div>
                   <div>
-                    <div className="text-sm text-gray-400">{info.label}</div>
-                      <div className="text-white group-hover:text-brand-primary transition-colors">
+                    <div className="text-sm text-slate-500">{info.label}</div>
+                      <div className="text-slate-900 group-hover:text-orange-500 transition-colors">
                       {info.value}
                     </div>
                   </div>
@@ -133,20 +133,20 @@ export function ContactoSection() {
             </div>
 
             {/* Business Hours */}
-            <div className="p-6 bg-[#243246] border border-[#2d3d52]">
-              <h4 className="text-lg font-semibold text-white mb-3">
+            <div className="p-6 bg-white border border-slate-200 rounded-xl shadow-sm">
+              <h4 className="text-lg font-semibold text-slate-900 mb-3">
                 Horario de Atencion
               </h4>
               <div className="space-y-2 text-sm">
-                <div className="flex justify-between text-gray-400">
+                <div className="flex justify-between text-slate-600">
                   <span>Lunes - Viernes</span>
-                  <span className="text-white">9:00 AM - 6:00 PM</span>
+                  <span className="text-slate-900">9:00 AM - 6:00 PM</span>
                 </div>
-                <div className="flex justify-between text-gray-400">
+                <div className="flex justify-between text-slate-600">
                   <span>Sabado</span>
-                  <span className="text-white">10:00 AM - 2:00 PM</span>
+                  <span className="text-slate-900">10:00 AM - 2:00 PM</span>
                 </div>
-                <div className="flex justify-between text-gray-400">
+                <div className="flex justify-between text-slate-600">
                   <span>Soporte 24/7</span>
                   <span className="text-brand-primary">Disponible</span>
                 </div>

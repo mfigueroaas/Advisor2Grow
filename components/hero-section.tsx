@@ -160,32 +160,17 @@ function GridBackground() {
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-50">
       {/* Animated Grid Background */}
       <GridBackground />
-      
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-24">
-        {/* System Status Micro-typography */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mb-6"
-        >
-          <span className="font-mono text-xs tracking-widest text-primary">
-            [SYS.INIT // ADVISOR2GROW // STATUS: ONLINE]
-          </span>
-        </motion.div>
-
         {/* Main Title */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6 text-balance"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6 text-balance text-slate-900"
         >
           Transformamos tus servicios TI en una{" "}
           <span className="text-primary">plataforma segura</span>, estable y lista para{" "}
@@ -197,7 +182,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg md:text-xl text-muted-foreground max-w-3xl mb-12 font-[var(--font-inter)]"
+          className="text-lg md:text-xl text-slate-600 max-w-3xl mb-12 font-[var(--font-inter)]"
         >
           Consultoría especializada en infraestructura, cloud computing y ciberseguridad 
           para empresas que demandan excelencia operativa.
@@ -208,35 +193,35 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-wrap items-center gap-8 mb-12 font-mono text-sm"
+          className="flex flex-wrap items-center gap-8 mb-12 font-sans text-sm"
         >
           <div className="flex items-center gap-2">
-            <span className="text-3xl md:text-4xl font-bold text-foreground">
+            <span className="text-3xl md:text-4xl font-bold text-slate-900">
               <AnimatedCounter end={20} suffix="+" />
             </span>
-            <span className="text-muted-foreground uppercase tracking-wider text-xs">
+            <span className="text-slate-600 uppercase tracking-wider text-xs">
               Anos de<br />Experiencia
             </span>
           </div>
           
-          <div className="w-px h-12 bg-border" />
+          <div className="w-px h-12 bg-slate-200" />
           
           <div className="flex items-center gap-2">
-            <span className="text-3xl md:text-4xl font-bold text-foreground">
+            <span className="text-3xl md:text-4xl font-bold text-slate-900">
               24/7
             </span>
-            <span className="text-muted-foreground uppercase tracking-wider text-xs">
+            <span className="text-slate-600 uppercase tracking-wider text-xs">
               Soporte<br />Continuo
             </span>
           </div>
           
-          <div className="w-px h-12 bg-border" />
+          <div className="w-px h-12 bg-slate-200" />
           
           <div className="flex items-center gap-2">
-            <span className="text-3xl md:text-4xl font-bold text-foreground">
+            <span className="text-3xl md:text-4xl font-bold text-slate-900">
               <AnimatedCounter end={100} suffix="+" />
             </span>
-            <span className="text-muted-foreground uppercase tracking-wider text-xs">
+            <span className="text-slate-600 uppercase tracking-wider text-xs">
               Proyectos<br />MultiCloud
             </span>
           </div>
@@ -251,7 +236,7 @@ export function HeroSection() {
         >
           <Button
             size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-none px-8 py-6 text-base font-semibold tracking-wide orange-glow transition-all hover:orange-glow-intense"
+            className="bg-orange-500 text-slate-50 hover:bg-orange-600 rounded-none px-8 py-6 text-base font-semibold tracking-wide transition-all"
           >
             Contactar a un Experto
           </Button>
@@ -259,19 +244,12 @@ export function HeroSection() {
           <Button
             size="lg"
             variant="outline"
-            className="rounded-none border-border bg-transparent text-foreground px-8 py-6 text-base font-semibold tracking-wide hover:border-primary hover:text-primary transition-colors"
+            className="rounded-none border-slate-200 bg-white text-slate-900 px-8 py-6 text-base font-semibold tracking-wide hover:border-orange-500 hover:text-orange-500 transition-colors"
           >
             Nuestros Servicios
           </Button>
         </motion.div>
 
-        {/* Decorative corner brackets */}
-        <div className="absolute top-20 left-6 text-primary/30 font-mono text-xs">
-          [<span className="text-primary/50">00</span>]
-        </div>
-        <div className="absolute bottom-20 right-6 text-primary/30 font-mono text-xs">
-          [<span className="text-primary/50">01</span>]
-        </div>
       </div>
     </section>
   )
