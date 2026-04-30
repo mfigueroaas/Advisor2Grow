@@ -46,14 +46,14 @@ export function InicioSection() {
           >
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-white mb-8 leading-tight">
               Transformamos tus servicios TI en una plataforma{" "}
-              <span className="text-[#F26522]">segura, estable y lista para crecer</span>
+              <span className="text-brand-primary">segura, estable y lista para crecer</span>
             </h1>
             
             {/* Informacion de Contacto */}
             <div className="space-y-4 mb-10">
               <div className="flex items-center gap-4">
-                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#F26522]/10 border border-[#F26522]/20">
-                  <Mail className="w-5 h-5 text-[#F26522]" />
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-brand-primary/10 border border-brand-primary/20">
+                  <Mail className="w-5 h-5 text-brand-primary" />
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Correo</p>
@@ -62,8 +62,8 @@ export function InicioSection() {
               </div>
               
               <div className="flex items-center gap-4">
-                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#F26522]/10 border border-[#F26522]/20">
-                  <MapPin className="w-5 h-5 text-[#F26522]" />
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-brand-primary/10 border border-brand-primary/20">
+                  <MapPin className="w-5 h-5 text-brand-primary" />
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Sede Central</p>
@@ -72,8 +72,8 @@ export function InicioSection() {
               </div>
               
               <div className="flex items-center gap-4">
-                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#F26522]/10 border border-[#F26522]/20">
-                  <Phone className="w-5 h-5 text-[#F26522]" />
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-brand-primary/10 border border-brand-primary/20">
+                  <Phone className="w-5 h-5 text-brand-primary" />
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Telefono</p>
@@ -86,7 +86,7 @@ export function InicioSection() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 onClick={() => handleScrollTo("#contacto")}
-                className="bg-[#F26522] hover:bg-[#F26522]/90 text-white font-semibold px-8 py-6 text-lg transition-all duration-300 hover:shadow-[0_0_25px_rgba(242,101,34,0.5)]"
+                className="bg-brand-primary hover:bg-brand-primary/90 text-white font-semibold px-8 py-6 text-lg transition-all duration-300 hover:shadow-[0_0_25px_rgba(242,101,34,0.5)]"
               >
                 Contactar
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -95,7 +95,7 @@ export function InicioSection() {
               <Button
                 variant="outline"
                 onClick={() => handleScrollTo("#servicios")}
-                className="border-gray-600 text-gray-300 hover:border-[#F26522] hover:text-[#F26522] px-8 py-6 text-lg transition-all duration-300"
+                className="border-gray-600 text-gray-300 hover:border-brand-primary hover:text-brand-primary px-8 py-6 text-lg transition-all duration-300"
               >
                 Servicios
               </Button>
@@ -142,7 +142,7 @@ export function InicioSection() {
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
-            className="w-1.5 h-1.5 rounded-full bg-[#F26522]"
+            className="w-1.5 h-1.5 rounded-full bg-brand-primary"
           />
         </motion.div>
       </motion.div>

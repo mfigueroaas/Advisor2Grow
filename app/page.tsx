@@ -1,10 +1,9 @@
-"use client"
-
-import { motion } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
 import { TechStackHub } from "@/components/tech-stack-hub"
 import { BrandsSuccessSection } from "@/components/brands-success-section"
+import { FadeIn } from "@/components/motion/fade-in"
+import { AnimatedHeading } from "@/components/motion/animated-heading"
 
 export default function Home() {
   return (
@@ -21,54 +20,30 @@ export default function Home() {
           
           {/* Columna Izquierda: Texto y CTA */}
           <div className="flex flex-col space-y-6 md:space-y-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-slate-400 tracking-widest text-xs md:text-sm uppercase font-semibold"
-            >
+            <FadeIn className="text-slate-400 tracking-widest text-xs md:text-sm uppercase font-semibold" y={14} duration={0.4}>
               Consultoría Líder en TI
-            </motion.div>
-            
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-4xl md:text-6xl lg:text-5xl xl:text-6xl font-space font-bold text-white leading-[1.05]"
-            >
+            </FadeIn>
+
+            <AnimatedHeading as="h1" className="text-4xl md:text-6xl lg:text-5xl xl:text-6xl font-space font-bold text-white leading-[1.05]" delay={0.08} duration={0.55}>
               Transformamos tus servicios TI en una plataforma segura, estable y lista para crecer.
-            </motion.h1>
+            </AnimatedHeading>
 
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-slate-400 font-inter text-base md:text-xl leading-relaxed"
-            >
+            <FadeIn className="text-slate-400 font-inter text-base md:text-xl leading-relaxed" delay={0.16} duration={0.5}>
               Somos una empresa joven y ágil, respaldada por más de 20 años de experiencia liderando servicios de infraestructura, nube y continuidad operativa para grandes corporaciones. Diseñamos, implementamos y operamos soluciones TI modernas con foco en resiliencia y ciberseguridad.
-            </motion.p>
+            </FadeIn>
 
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4 md:gap-6 pt-4"
-            >
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 pt-4">
               <Link href="/contacto" className="px-6 py-3 md:px-8 md:py-4 bg-orange-500 text-white font-space font-bold tracking-widest hover:bg-orange-600 transition-colors text-center uppercase text-xs md:text-sm border border-orange-500">
                 Contactar a un Experto
               </Link>
               <Link href="/servicios" className="px-6 py-3 md:px-8 md:py-4 border border-orange-500 text-orange-500 font-space font-bold tracking-widest hover:bg-orange-500/10 transition-colors text-center uppercase text-xs md:text-sm bg-black/20 backdrop-blur-sm">
                 Explorar Servicios
               </Link>
-            </motion.div>
+            </div>
           </div>
 
           {/* Columna Derecha: Imagen Principal */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="w-full flex items-center justify-center mt-12 lg:mt-0"
-          >
+          <FadeIn className="w-full flex items-center justify-center mt-12 lg:mt-0" delay={0.22} duration={0.6} x={0} y={20}>
             <div className="relative w-full flex justify-center lg:justify-end group">
               <Image
                 src="/Imagenes/hero-principal.png"
@@ -79,44 +54,41 @@ export default function Home() {
                 priority
               />
             </div>
-          </motion.div>
+          </FadeIn>
 
         </div>
 
         {/* Banner de Estadísticas de Ancho Completo */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="w-full mt-16 md:mt-20 border-t border-slate-800/50 pt-10"
-        >
+        <FadeIn className="w-full mt-16 md:mt-20 border-t border-slate-800/50 pt-10" delay={0.12} duration={0.5}>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12">
             <div className="flex flex-col items-center sm:items-start">
               <div className="font-mono text-xs md:text-sm text-slate-500 mb-2 uppercase tracking-widest">EXPERIENCIA</div>
-              <div className="font-space text-3xl md:text-4xl lg:text-5xl font-bold text-[#F26522]">20+ años</div>
+              <div className="font-space text-3xl md:text-4xl lg:text-5xl font-bold text-brand-primary">20+ años</div>
             </div>
             <div className="flex flex-col items-center sm:items-start">
               <div className="font-mono text-xs md:text-sm text-slate-500 mb-2 uppercase tracking-widest">ENFOQUE</div>
-              <div className="font-space text-3xl md:text-4xl lg:text-5xl font-bold text-[#F26522]">Continuidad 24/7</div>
+              <div className="font-space text-3xl md:text-4xl lg:text-5xl font-bold text-brand-primary">Continuidad 24/7</div>
             </div>
             <div className="flex flex-col items-center sm:items-start">
               <div className="font-mono text-xs md:text-sm text-slate-500 mb-2 uppercase tracking-widest">ÁMBITOS</div>
-              <div className="font-space text-3xl md:text-4xl lg:text-5xl font-bold text-[#F26522]">Infra & MultiCloud</div>
+              <div className="font-space text-3xl md:text-4xl lg:text-5xl font-bold text-brand-primary">Infra & MultiCloud</div>
             </div>
           </div>
-        </motion.div>
+        </FadeIn>
       </section>
 
       {/* 2. Sección Continuidad y Rueda Tecnológica */}
       <section className="relative w-full border-y border-slate-800 bg-slate-950/60 backdrop-blur-xl py-16 md:py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 md:px-6 mb-8 md:mb-12">
-          <div className="w-12 h-1 bg-orange-500 mb-6 md:mb-8"></div>
-          <h2 className="text-3xl md:text-5xl font-space font-bold text-white mb-4 md:mb-6">
+          <FadeIn delay={0.02} duration={0.4}>
+            <div className="w-12 h-1 bg-orange-500 mb-6 md:mb-8" />
+          </FadeIn>
+          <AnimatedHeading as="h2" className="text-3xl md:text-5xl font-space font-bold text-white mb-4 md:mb-6" delay={0.08} duration={0.55}>
             Aseguramos tu continuidad operativa
-          </h2>
-          <p className="text-slate-400 font-inter text-base md:text-lg leading-relaxed text-left md:text-justify max-w-4xl">
+          </AnimatedHeading>
+          <FadeIn className="text-slate-400 font-inter text-base md:text-lg leading-relaxed text-left md:text-justify max-w-4xl" delay={0.16} duration={0.5}>
             Identificamos brechas, fortalecemos tu infraestructura y aplicamos buenas prácticas internacionales para que la operación de tu negocio se mantenga estable, segura y preparada ante ciberataques, fallos y cambios regulatorios. Chile es uno de los países más atacados de la región. Te ayudamos a reducir riesgos, proteger tu información y garantizar la continuidad de tus servicios.
-          </p>
+          </FadeIn>
         </div>
 
         <TechStackHub />
@@ -128,7 +100,7 @@ export default function Home() {
       {/* 3. Grid de Características */}
       <section className="w-full max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24 border-x border-slate-800/30">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-          {[
+          {[ 
             {
               title: "Asesoría experta",
               desc: "Soluciones adaptadas a cada cliente."
@@ -146,22 +118,24 @@ export default function Home() {
               desc: "Protección integral avanzada de datos."
             }
           ].map((feat, i) => (
-            <div key={i} className="p-6 md:p-10 border border-slate-800 bg-slate-950/40 hover:bg-slate-950/80 hover:border-orange-500 transition-all duration-300 group cursor-crosshair">
-              <div className="font-mono text-slate-600 group-hover:text-orange-500 mb-4 md:mb-6 text-xs md:text-sm transition-colors duration-300">
-                [0{i+1}] // MÓDULO
+            <FadeIn key={i} delay={0.08 * i} duration={0.45}>
+              <div className="p-6 md:p-10 border border-slate-800 bg-slate-950/40 hover:bg-slate-950/80 hover:border-orange-500 transition-all duration-300 group cursor-crosshair">
+                <div className="font-mono text-slate-600 group-hover:text-orange-500 mb-4 md:mb-6 text-xs md:text-sm transition-colors duration-300">
+                  [0{i+1}] // MÓDULO
+                </div>
+                <h3 className="font-space text-xl md:text-2xl font-bold text-white mb-2 md:mb-4 group-hover:text-orange-500 transition-colors duration-300">
+                  {feat.title}
+                </h3>
+                <p className="font-inter text-slate-400 text-base md:text-lg">
+                  {feat.desc}
+                </p>
+                
+                {/* Decorative HUD element inside card */}
+                <div className="mt-6 md:mt-8 flex justify-end">
+                  <div className="w-8 h-[1px] bg-slate-700 group-hover:bg-orange-500 group-hover:w-16 transition-all duration-300"></div>
+                </div>
               </div>
-              <h3 className="font-space text-xl md:text-2xl font-bold text-white mb-2 md:mb-4 group-hover:text-orange-500 transition-colors duration-300">
-                {feat.title}
-              </h3>
-              <p className="font-inter text-slate-400 text-base md:text-lg">
-                {feat.desc}
-              </p>
-              
-              {/* Decorative HUD element inside card */}
-              <div className="mt-6 md:mt-8 flex justify-end">
-                <div className="w-8 h-[1px] bg-slate-700 group-hover:bg-orange-500 group-hover:w-16 transition-all duration-300"></div>
-              </div>
-            </div>
+            </FadeIn>
           ))}
         </div>
       </section>

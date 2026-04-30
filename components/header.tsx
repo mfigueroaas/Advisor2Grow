@@ -5,11 +5,7 @@ import { motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-const navLinks = [
-  { href: "#servicios", label: "Servicios" },
-  { href: "#tecnologias", label: "Tecnologias" },
-  { href: "#contacto", label: "Contacto" },
-]
+import { headerNav } from "@/data/header-nav"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -49,7 +45,7 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
+          {headerNav.map((link) => (
             <a
               key={link.href}
               href={link.href}

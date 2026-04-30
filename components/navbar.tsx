@@ -4,13 +4,7 @@ import { useState, useEffect, useCallback } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
-
-const navLinks = [
-  { href: "#inicio", label: "INICIO" },
-  { href: "#nosotros", label: "NOSOTROS" },
-  { href: "#servicios", label: "NUESTROS SERVICIOS" },
-  { href: "#contacto", label: "CONTACTO" },
-]
+import { navLinks } from "@/data/navigation"
 
 function NavLink({ href, label, onClick }: { href: string; label: string; onClick: () => void }) {
   const handleClick = useCallback((e: React.MouseEvent) => {
@@ -25,10 +19,10 @@ function NavLink({ href, label, onClick }: { href: string; label: string; onClic
   return (
     <button
       onClick={handleClick}
-      className="relative text-sm font-medium text-gray-300 transition-colors duration-300 hover:text-[#F26522] tracking-wide group cursor-pointer"
+      className="relative text-sm font-medium text-gray-300 transition-colors duration-300 hover:text-brand-primary tracking-wide group cursor-pointer"
     >
       {label}
-      <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-[#F26522] transition-all duration-300 group-hover:w-full" />
+      <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-brand-primary transition-all duration-300 group-hover:w-full" />
     </button>
   )
 }
@@ -43,10 +37,10 @@ function MobileNavLink({ href, label, onClick }: { href: string; label: string; 
     onClick()
   }, [href, onClick])
 
-  return (
+    return (
     <button
       onClick={handleClick}
-      className="text-sm font-medium text-gray-300 transition-colors duration-300 hover:text-[#F26522] py-2 text-left cursor-pointer"
+      className="text-sm font-medium text-gray-300 transition-colors duration-300 hover:text-brand-primary py-2 text-left cursor-pointer"
     >
       {label}
     </button>
@@ -118,7 +112,7 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-gray-300 hover:text-[#F26522] transition-colors cursor-pointer"
+            className="md:hidden p-2 text-gray-300 hover:text-brand-primary transition-colors cursor-pointer"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

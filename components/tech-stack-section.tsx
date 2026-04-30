@@ -3,8 +3,9 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef, useState, useEffect } from "react"
+import { techStackNodes as technologies } from "@/data/tech-stack"
 
-const technologies = [
+// technologies imported from data/tech-stack
   {
     id: "aws",
     name: "AWS",

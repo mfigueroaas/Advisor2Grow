@@ -11,7 +11,7 @@ export function FooterSimple() {
           <div className="flex items-center gap-6">
             <a 
               href="#inicio" 
-              className="text-sm text-gray-400 hover:text-[#F26522] transition-colors"
+              className="text-sm text-gray-400 hover:text-brand-primary transition-colors"
               onClick={(e) => {
                 e.preventDefault()
                 document.querySelector("#inicio")?.scrollIntoView({ behavior: "smooth" })
@@ -21,7 +21,7 @@ export function FooterSimple() {
             </a>
             <a 
               href="#nosotros" 
-              className="text-sm text-gray-400 hover:text-[#F26522] transition-colors"
+              className="text-sm text-gray-400 hover:text-brand-primary transition-colors"
               onClick={(e) => {
                 e.preventDefault()
                 document.querySelector("#nosotros")?.scrollIntoView({ behavior: "smooth" })
@@ -31,7 +31,7 @@ export function FooterSimple() {
             </a>
             <a 
               href="#servicios" 
-              className="text-sm text-gray-400 hover:text-[#F26522] transition-colors"
+              className="text-sm text-gray-400 hover:text-brand-primary transition-colors"
               onClick={(e) => {
                 e.preventDefault()
                 document.querySelector("#servicios")?.scrollIntoView({ behavior: "smooth" })
@@ -41,7 +41,7 @@ export function FooterSimple() {
             </a>
             <a 
               href="#contacto" 
-              className="text-sm text-gray-400 hover:text-[#F26522] transition-colors"
+              className="text-sm text-gray-400 hover:text-brand-primary transition-colors"
               onClick={(e) => {
                 e.preventDefault()
                 document.querySelector("#contacto")?.scrollIntoView({ behavior: "smooth" })

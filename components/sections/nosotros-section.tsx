@@ -3,32 +3,7 @@
 import { motion } from "framer-motion"
 import { Linkedin } from "lucide-react"
 
-const teamMembers = [
-  {
-    name: "Nombre Apellido",
-    role: "Arquitecto Cloud",
-    description: "Mas de 15 anos de experiencia en arquitecturas cloud empresariales. Especialista en AWS, Azure y soluciones hibridas.",
-    linkedin: "#"
-  },
-  {
-    name: "Nombre Apellido",
-    role: "Director de Operaciones",
-    description: "Experto en gestion de infraestructura critica y operaciones TI. Certificado en ITIL y PMP.",
-    linkedin: "#"
-  },
-  {
-    name: "Nombre Apellido",
-    role: "Especialista en Seguridad",
-    description: "Lider en ciberseguridad con certificaciones CISSP y CEH. Protegiendo empresas por mas de 10 anos.",
-    linkedin: "#"
-  },
-  {
-    name: "Nombre Apellido",
-    role: "Consultor Senior DevOps",
-    description: "Automatizacion y CI/CD son su pasion. Implementando pipelines eficientes en multiples industrias.",
-    linkedin: "#"
-  }
-]
+import { teamMembers } from "@/data/team"
 
 function TeamCard({ member, index }: { member: typeof teamMembers[0]; index: number }) {
   return (
@@ -37,7 +12,7 @@ function TeamCard({ member, index }: { member: typeof teamMembers[0]; index: num
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative bg-slate-800/40 border border-slate-700/50 overflow-hidden transition-all duration-300 hover:border-[#F26522]"
+      className="group relative bg-slate-800/40 border border-slate-700/50 overflow-hidden transition-all duration-300 hover:border-brand-primary"
     >
       {/* Card Content */}
       <div className="p-6">
@@ -55,7 +30,7 @@ function TeamCard({ member, index }: { member: typeof teamMembers[0]; index: num
           <h3 className="text-xl font-semibold text-white mb-1">
             {member.name}
           </h3>
-          <p className="text-[#F26522] text-sm font-medium">
+          <p className="text-brand-primary text-sm font-medium">
             {member.role}
           </p>
         </div>
@@ -70,7 +45,7 @@ function TeamCard({ member, index }: { member: typeof teamMembers[0]; index: num
           href={member.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-[#F26522] hover:text-white transition-colors cursor-hover"
+          className="flex items-center gap-2 text-brand-primary hover:text-white transition-colors cursor-hover"
         >
           <Linkedin className="h-5 w-5" />
           <span className="text-sm font-medium">LinkedIn</span>
@@ -96,7 +71,7 @@ export function NosotrosSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-            Conoce a Nuestro <span className="text-[#F26522]">Equipo</span>
+            Conoce a Nuestro <span className="text-brand-primary">Equipo</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
             Profesionales certificados con amplia experiencia en las principales tecnologias del mercado.

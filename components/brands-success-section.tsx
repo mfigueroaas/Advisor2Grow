@@ -2,40 +2,8 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import Image from "next/image"
-
-const brandsData = [
-  {
-    id: "aws",
-    name: "AWS (Amazon Web Services)",
-    successCase: "Migración de infraestructura legacy corporativa hacia una arquitectura nativa en la nube, reduciendo los costos operativos en un 35% y logrando escalabilidad automática ante picos de demanda.",
-    image: "/Imagenes/Logos/aws.png",
-  },
-  {
-    id: "vmware",
-    name: "VMware",
-    successCase: "Consolidación de 50 servidores físicos en un clúster de alta disponibilidad (HA). Logramos Zero Downtime durante el horario operativo y redujimos el consumo energético del Data Center.",
-    image: "/Imagenes/Logos/vmware.png",
-  },
-  {
-    id: "veeam",
-    name: "Veeam",
-    successCase: "Implementación de políticas de respaldo inmutables. Recuperación exitosa y total de la infraestructura de un cliente crítico tras un intento de ataque de ransomware en menos de 4 horas.",
-    image: "/Imagenes/Logos/veeam.png",
-  },
-  {
-    id: "acronis",
-    name: "Acronis",
-    successCase: "Protección integral de datos y recuperación rápida ante desastres, garantizando la continuidad operativa y minimizando el impacto de ciberamenazas.",
-    image: "/Imagenes/Logos/acronis.png",
-  },
-  {
-    id: "azure",
-    name: "Microsoft Azure",
-    successCase: "Integración de entornos híbridos seguros mediante Azure Active Directory y VPN Site-to-Site, permitiendo el teletrabajo seguro para más de 500 colaboradores.",
-    image: "/Imagenes/Logos/azure.png",
-  }
-]
+import { brandsData, type Brand } from "@/data/brands"
+import BrandCard from "@/components/brand-card"
 
 export function BrandsSuccessSection() {
   const [activeBrand, setActiveBrand] = useState(brandsData[0])
@@ -66,46 +34,14 @@ export function BrandsSuccessSection() {
 
       {/* Zona Superior: Grid de Logos Holográficos (SIN EFECTO BLANCO) */}
       <div className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4 lg:gap-8 mb-8 md:mb-12">
-        {brandsData.map((brand) => {
-          const isActive = activeBrand.id === brand.id
-
-          return (
-            <button
-              key={brand.id}
-              onClick={() => setActiveBrand(brand)}
-              onMouseEnter={() => setActiveBrand(brand)}
-              className={`relative h-32 md:h-48 flex flex-col items-center justify-center transition-all duration-500 group cursor-crosshair rounded-none overflow-hidden backdrop-blur-md
-                ${isActive 
-                  ? 'bg-orange-500/10 border border-orange-500/50 shadow-[inset_0_0_30px_rgba(242,101,34,0.1),0_0_20px_rgba(242,101,34,0.15)]' 
-                  : 'bg-orange-500/[0.03] border border-orange-500/20 hover:bg-orange-500/[0.08] hover:border-orange-500/40 hover:shadow-[inset_0_0_20px_rgba(242,101,34,0.05)]'
-                }
-              `}
-            >
-              {/* Contenedor de la Imagen */}
-              <div className="relative w-20 h-20 md:w-28 md:h-28 mb-2 md:mb-3 flex items-center justify-center">
-                <Image 
-                  src={brand.image} 
-                  alt={brand.name} 
-                  fill 
-                  className={`object-contain transition-all duration-500 ${
-                    isActive 
-                      ? 'drop-shadow-[0_0_20px_rgba(255,255,255,0.7)] scale-110' 
-                      : 'drop-shadow-[0_0_12px_rgba(255,255,255,0.3)] opacity-90 group-hover:opacity-100 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] group-hover:scale-105'
-                  }`} 
-                />
-              </div>
-              
-              {/* Texto de la Marca */}
-              <span className={`font-mono text-[8px] md:text-[10px] tracking-widest uppercase transition-colors duration-300 ${
-                isActive 
-                  ? 'text-orange-400 font-bold drop-shadow-[0_0_5px_rgba(242,101,34,0.8)]' 
-                  : 'text-orange-500/50 group-hover:text-orange-400/80'
-              }`}>
-                {brand.name.split(' ')[0]}
-              </span>
-            </button>
-          )
-        })}
+        {brandsData.map((brand) => (
+          <BrandCard
+            key={brand.id}
+            brand={brand}
+            isActive={activeBrand.id === brand.id}
+            onActivate={(b) => setActiveBrand(b)}
+          />
+        ))}
       </div>
 
       {/* Zona Inferior: Terminal de Casos de Éxito */}

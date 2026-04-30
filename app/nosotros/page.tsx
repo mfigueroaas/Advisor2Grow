@@ -1,7 +1,6 @@
-"use client"
-
-import { motion } from "framer-motion"
 import Image from "next/image"
+import { FadeIn } from "@/components/motion/fade-in"
+import { AnimatedHeading } from "@/components/motion/animated-heading"
 
 export default function NosotrosPage() {
   return (
@@ -11,36 +10,20 @@ export default function NosotrosPage() {
 
       {/* Header / Intro */}
       <section className="relative w-full max-w-7xl mx-auto px-4 md:px-6 pt-24 md:pt-32 pb-16 md:pb-24 border-x border-slate-800/30">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="font-mono text-orange-500 mb-4 md:mb-6 tracking-widest text-xs md:text-sm uppercase"
-        >
-          [DIR // ABOUT_US]
-        </motion.div>
+        <FadeIn className="font-mono text-orange-500 mb-4 md:mb-6 tracking-widest text-xs md:text-sm uppercase" y={12} duration={0.4}>[DIR // ABOUT_US]</FadeIn>
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24">
           <div className="lg:col-span-7">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-3xl md:text-6xl font-space font-bold text-white mb-6 md:mb-8 leading-tight uppercase"
-            >
+            <AnimatedHeading as="h1" className="text-3xl md:text-6xl font-space font-bold text-white mb-6 md:mb-8 leading-tight uppercase" delay={0.08} duration={0.55}>
               UN ASESOR QUE TE LLEVA A CRECER / ADVISOR2GROW
-            </motion.h1>
+            </AnimatedHeading>
           </div>
           
           <div className="lg:col-span-5 flex flex-col justify-center">
-            <div className="w-12 h-1 bg-orange-500 mb-6 md:mb-8 hidden lg:block"></div>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-slate-400 font-inter text-base md:text-lg leading-relaxed text-left md:text-justify"
-            >
+            <FadeIn className="w-12 h-1 bg-orange-500 mb-6 md:mb-8 hidden lg:block" y={8} duration={0.4}><div /></FadeIn>
+            <FadeIn className="text-slate-400 font-inter text-base md:text-lg leading-relaxed text-left md:text-justify" delay={0.16} duration={0.5}>
               Somos una empresa moderna, cercana, que entiende las necesidades de sus clientes y las transforma en soluciones. Profesionales con más de 20 años en el rubro tecnológico, liderando la creación y consolidación de áreas de TI para grandes empresas y prestadores de servicios. La experiencia combina profundidad técnica, excelencia operativa y visión de negocio.
-            </motion.p>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -50,11 +33,10 @@ export default function NosotrosPage() {
         <div className="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           
           {/* Misión Card */}
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+          <FadeIn 
             className="p-6 md:p-12 border border-slate-800 bg-slate-950/50 hover:border-orange-500 transition-colors duration-500 group relative overflow-hidden"
+            delay={0.1}
+            duration={0.5}
           >
             {/* Decal top right */}
             <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-orange-500/0 group-hover:border-orange-500/50 transition-all duration-500"></div>
@@ -66,14 +48,13 @@ export default function NosotrosPage() {
             <p className="text-slate-400 font-inter text-base md:text-lg leading-relaxed">
               Optimizar la infraestructura tecnológica de nuestros clientes mediante soluciones innovadoras y personalizadas que aseguren su continuity operativa y fortalezcan su crecimiento sostenible.
             </p>
-          </motion.div>
+          </FadeIn>
 
           {/* Visión Card */}
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+          <FadeIn 
             className="p-6 md:p-12 border border-slate-800 bg-slate-950/50 hover:border-orange-500 transition-colors duration-500 group relative overflow-hidden"
+            delay={0.18}
+            duration={0.5}
           >
             {/* Decal top right */}
             <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-orange-500/0 group-hover:border-orange-500/50 transition-all duration-500"></div>
@@ -85,7 +66,7 @@ export default function NosotrosPage() {
             <p className="text-slate-400 font-inter text-base md:text-lg leading-relaxed">
               Ser reconocidos como una consultora tecnológica líder en soluciones TI integrales, comprometida con la eficiencia, la seguridad y la transformación digital de las organizaciones.
             </p>
-          </motion.div>
+          </FadeIn>
 
         </div>
       </section>
@@ -108,14 +89,8 @@ export default function NosotrosPage() {
             { name: "Marcelo Figueroa", role: "Ingeniero DevOps", exp: "Automatización y despliegue continuo.", image: "/Imagenes/Personas/especialista-3.jpg" },
             { name: "Dante Mendoza", role: "Líder Infraestructura", exp: "Alta disponibilidad y VMware.", image: "/Imagenes/Personas/especialista-4.jpg" }
           ].map((member, i) => (
-            <motion.div 
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="relative border border-slate-800 bg-slate-900 aspect-[3/4] overflow-hidden group cursor-crosshair w-full"
-            >
+            <FadeIn key={i} delay={0.05 * i} duration={0.45}>
+              <div className="relative border border-slate-800 bg-slate-900 aspect-[3/4] overflow-hidden group cursor-crosshair w-full">
               {/* Foto Perfil */}
               <div className="absolute inset-0 bg-slate-800">
                 <Image 
@@ -165,7 +140,8 @@ export default function NosotrosPage() {
 
               {/* Borde Naranja Hover */}
               <div className="absolute inset-0 border border-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-30"></div>
-            </motion.div>
+              </div>
+            </FadeIn>
           ))}
         </div>
       </section>

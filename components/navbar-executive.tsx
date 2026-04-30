@@ -11,17 +11,13 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet"
 import { useState } from "react"
+import { navbarExecLinks } from "@/data/navbar-exec"
 
 export function NavbarExecutive() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
 
-  const links = [
-    { href: "/", label: "Inicio" },
-    { href: "/nosotros", label: "Nosotros" },
-    { href: "/servicios", label: "Nuestros Servicios" },
-    { href: "/contacto", label: "Contacto" },
-  ]
+  const links = navbarExecLinks
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
